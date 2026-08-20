@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GovAgent - Agência de Inteligência | Estudo de Caso - Oscar Lima</title>
+    <meta name="description" content="Como criei o GovAgent, um simulador estratégico no estilo Reigns com Next.js 16, persistência no Supabase e deploy serverless na Cloudflare.">
+    
+    <!-- AI Search & SEO Optimization -->
+    <meta name="author" content="Oscar Lima">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://oscarlima.com.br/govagent.html">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="GovAgent - Agência de Inteligência | Estudo de Caso - Oscar Lima">
+    <meta property="og:description" content="Simulador estratégico interativo no estilo Reigns integrado ao Supabase e implantado na Cloudflare.">
+    <meta property="og:url" content="https://oscarlima.com.br/govagent.html">
+    <meta property="og:type" content="website">
+
+    <!-- Google Fonts Preconnect and Link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Orbitron:wght@400;500;700;900&display=swap">
+
+    <!-- FontAwesome for Premium Icons (Asynchronous) -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+    
+    <!-- Local Premium Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cookie-consent.css">
+    
+    <!-- Case Study Specific Styles -->
+    <style>
+        .case-container {
+            max-width: 1200px;
+            margin: 120px auto 60px;
+            padding: 0 20px;
+        }
+        
+        .breadcrumbs {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            color: var(--color-text-muted);
+        }
+        
+        .breadcrumbs a {
+            color: var(--color-text-muted);
+            text-decoration: none;
+            transition: var(--transition-smooth);
+        }
+        
+        .breadcrumbs a:hover {
+            color: var(--color-primary);
+        }
+        
+        .breadcrumbs i {
+            font-size: 0.8rem;
+        }
+        
+        .case-hero {
+            margin-bottom: 40px;
+        }
+        
+        .case-title {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            line-height: 1.2;
+        }
+        
+        .case-tagline {
+            font-size: 1.2rem;
+            color: var(--color-text-muted);
+            margin-bottom: 30px;
+        }
+        
+        .case-details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .detail-card {
+            padding: 20px;
+            text-align: left;
+        }
+        
+        .detail-card h4 {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--color-primary);
+            margin-bottom: 8px;
+        }
+        
+        .detail-card p {
+            font-size: 1.1rem;
+            color: #fff;
+            font-weight: 500;
+        }
+        
+        .case-content-layout {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 40px;
+            align-items: start;
+        }
+        
+        @media (max-width: 992px) {
+            .case-content-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .case-main-content {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        
+        .case-section h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            border-bottom: 1px solid var(--border-glass);
+            padding-bottom: 8px;
+            color: #fff;
+        }
+        
+        .case-section p {
+            color: var(--color-text-muted);
+            font-size: 1.05rem;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+        
+        .case-section ul {
+            list-style: none;
+            margin-bottom: 15px;
+        }
+        
+        .case-section ul li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 10px;
+            color: var(--color-text-muted);
+            font-size: 1.05rem;
+        }
+        
+        .case-section ul li::before {
+            content: "\f00c";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--color-primary);
+        }
+        
+        .case-sidebar {
+            position: sticky;
+            top: 100px;
+        }
+        
+        .case-media-wrapper {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--border-glass);
+            box-shadow: var(--shadow-neon-purple);
+            margin-bottom: 30px;
+            transition: var(--transition-smooth);
+        }
+        
+        .case-media-wrapper:hover {
+            transform: scale(1.02);
+            border-color: var(--border-glass-hover);
+            box-shadow: var(--shadow-neon);
+        }
+        
+        .case-media-wrapper img {
+            width: 100%;
+            display: block;
+            object-fit: cover;
+        }
+        
+        .cta-panel {
+            text-align: center;
+            border: 1px solid var(--border-glass);
+            background: linear-gradient(135deg, rgba(13,13,25,0.8) 0%, rgba(5,5,10,0.9) 100%);
+        }
+        
+        .cta-panel h3 {
+            font-size: 1.6rem;
+            margin-bottom: 12px;
+        }
+        
+        .cta-panel p {
+            color: var(--color-text-muted);
+            margin-bottom: 25px;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Scroll Progress Bar -->
+    <div id="scroll-progress" class="scroll-progress"></div>
+
+    <!-- Background Blobs -->
+    <div class="bg-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <!-- Header Navigation -->
+    <header id="main-header" class="scrolled">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                OSCAR LIMA<span class="logo-dot"></span>
+            </a>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html#portfolio" class="nav-link">
+                        <i class="fa-solid fa-arrow-left"></i> Voltar ao Portfólio
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="case-container">
+        
+        <!-- Breadcrumbs -->
+        <div class="breadcrumbs">
+            <a href="index.html">Início</a>
+            <i class="fa-solid fa-chevron-right"></i>
+            <a href="index.html#portfolio">Portfólio</a>
+            <i class="fa-solid fa-chevron-right"></i>
+            <span>GovAgent - Agência de Inteligência</span>
+        </div>
+
+        <!-- Case Hero -->
+        <section class="case-hero">
+            <h1 class="case-title text-gradient">GovAgent - A Agência</h1>
+            <p class="case-tagline">Simulador estratégico Reigns-style focado em sobrevivência política e controle de inteligência.</p>
+        </section>
+
+        <!-- Project Meta Details -->
+        <section class="case-details-grid">
+            <div class="glass-panel detail-card">
+                <h4>Projeto</h4>
+                <p>Web Game / Simulador</p>
+            </div>
+            <div class="glass-panel detail-card">
+                <h4>Ano</h4>
+                <p>2026</p>
+            </div>
+            <div class="glass-panel detail-card">
+                <h4>Tecnologias</h4>
+                <p>Next.js 16, Supabase, Cloudflare (Wrangler/OpenNext)</p>
+            </div>
+            <div class="glass-panel detail-card">
+                <h4>Status</h4>
+                <p>Ativo / Disponível</p>
+            </div>
+        </section>
+
+        <!-- Content Layout -->
+        <div class="case-content-layout">
+            
+            <!-- Left: Main narrative -->
+            <article class="case-main-content">
+                
+                <section class="glass-panel case-section">
+                    <h3>O Desafio</h3>
+                    <p>O objetivo deste projeto foi desenvolver um jogo estratégico no estilo Reigns (focado em mecânicas de "swipe" de cartas para escolhas binárias) ambientado em uma agência de inteligência governamental.</p>
+                    <p>O desafio técnico consistia em equilibrar dinamicamente quatro pilares vitais de tensão (Legalidade, Poder Político, Opinião Pública e Orçamento) enquanto mantínhamos a persistência fluida e assíncrona do progresso do jogador (dossiês de personagens desbloqueados, segredos e histórico de baixas) em um banco de dados na nuvem.</p>
+                </section>
+
+                <section class="glass-panel case-section">
+                    <h3>A Solução</h3>
+                    <p>Desenvolvemos a aplicação inteiramente com <strong>Next.js 16 (App Router)</strong> e TypeScript, integrando o <strong>Supabase</strong> para gerenciar autenticação anônima (permitindo jogar instantaneamente sem logins burocráticos) e gravação rápida de dados de rodadas.</p>
+                    <p>O deploy foi desenhado para a infraestrutura da <strong>Cloudflare Pages</strong> através do OpenNext e Wrangler, transformando as rotas da aplicação em Cloudflare Workers serverless. Isso garante carregamento sob 300ms de qualquer lugar do mundo e alta tolerância a picos de tráfego, sem custos mensais de servidores dedicados.</p>
+                </section>
+
+                <section class="glass-panel case-section">
+                    <h3>Diferencial & Bastidores</h3>
+                    <p>A interface foi concebida como um terminal operacional de espionagem, com tema escuro cyberpunk profundo, fontes técnicas e indicadores em formato de líquido animado. A lógica das cartas (`cards.ts`) implementa eventos complexos, onde cada decisão tem impacto imediato nas facções internas do jogo.</p>
+                    <p>O jogo foi desenhado para ser mobile-first, mas a interface encapsula-se de maneira refinada no desktop, simulando uma tela de console de comando que mantém a imersão. Toda a interação tátil de arrasto foi programada para simular feedback físico nativo, proporcionando uma experiência rica para o usuário final.</p>
+                </section>
+
+                <section class="glass-panel case-section">
+                    <h3>Principais Resultados</h3>
+                    <ul>
+                        <li>Arquitetura Full-Stack serverless ultra-rápida implementada com OpenNext e Cloudflare.</li>
+                        <li>Autenticação anônima e banco de dados Supabase de baixa latência integrados nativamente.</li>
+                        <li>Interface cyberpunk responsiva com micro-animações fluidas nos indicadores de tensão.</li>
+                        <li>Excelente retenção de dados históricos com o Dossiê de Agentes e Registro de Baixas.</li>
+                    </ul>
+                </section>
+
+            </article>
+
+            <!-- Right: Media & CTA -->
+            <aside class="case-sidebar">
+                
+                <div class="case-media-wrapper">
+                    <img src="assets/portfolio/govagent800x600.png" alt="GovAgent Gameplay">
+                </div>
+
+                <div class="case-media-wrapper">
+                    <img src="assets/portfolio/govagent_dossies.png" alt="GovAgent Dossies do Caso">
+                </div>
+
+                <div class="glass-panel cta-panel">
+                    <h3>Assuma o Controle da Agência</h3>
+                    <p>Entre no terminal governamental e veja quantas rodadas você consegue sobreviver sob pressão constante e conspirações.</p>
+                    <a href="https://govagent.oscarlima.com.br" target="_blank" class="btn btn-primary">
+                        <i class="fa-solid fa-terminal"></i> Iniciar Terminal Operacional
+                    </a>
+                </div>
+
+            </aside>
+
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-socials">
+                <a href="https://github.com" target="_blank" class="footer-social-link" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="https://linkedin.com" target="_blank" class="footer-social-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://wa.me/5521991061796" target="_blank" class="footer-social-link" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="mailto:contato@oscarlima.com.br" class="footer-social-link" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+            <p class="footer-copyright">
+                &copy; 2026 Oscar Lima - Especialista WordPress & Desenvolvedor Front-end. Niterói, RJ. Todos os direitos reservados.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Local Premium JavaScript (Deferred) -->
+    <script src="js/main.js" defer></script>
+    <script src="js/cookie-consent.js" defer></script>
+</body>
+</html>

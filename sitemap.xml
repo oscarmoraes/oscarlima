@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+   <!-- Páginas Institucionais Estáticas -->
+   <sitemap>
+      <loc>https://oscarlima.com.br/sitemap-static.xml</loc>
+      <lastmod>2026-05-28T16:50:00+00:00</lastmod>
+   </sitemap>
+   <!-- Blog em WordPress (Sitemap dinâmico gerado pelo plugin de SEO) -->
+   <sitemap>
+      <loc>https://oscarlima.com.br/blog/sitemap_index.xml</loc>
+   </sitemap>
+</sitemapindex>

@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M.A.R. Instituto | Estudo de Caso - Oscar Lima</title>
+    <meta name="description" content="Como desenvolvemos um portal de notícias jurídicas ultra veloz para o M.A.R. Instituto usando Astra e sem Elementor.">
+    
+    <!-- AI Search & SEO Optimization -->
+    <meta name="author" content="Oscar Lima">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://oscarlima.com.br/mar-instituto.html">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="M.A.R. Instituto | Estudo de Caso - Oscar Lima">
+    <meta property="og:description" content="Portal de advocacia renovada com tema Astra otimizado e alta performance mobile.">
+    <meta property="og:url" content="https://oscarlima.com.br/mar-instituto.html">
+    <meta property="og:type" content="website">
+
+    <!-- Google Fonts Preconnect and Link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap">
+
+    <!-- FontAwesome for Premium Icons (Asynchronous) -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+    
+    <!-- Local Premium Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cookie-consent.css">
+    
+    <!-- Case Study Specific Styles -->
+    <style>
+        .case-container {
+            max-width: 1200px;
+            margin: 120px auto 60px;
+            padding: 0 20px;
+        }
+        
+        .breadcrumbs {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            color: var(--color-text-muted);
+        }
+        
+        .breadcrumbs a {
+            color: var(--color-text-muted);
+            text-decoration: none;
+            transition: var(--transition-smooth);
+        }
+        
+        .breadcrumbs a:hover {
+            color: var(--color-primary);
+        }
+        
+        .breadcrumbs i {
+            font-size: 0.8rem;
+        }
+        
+        .case-hero {
+            margin-bottom: 40px;
+        }
+        
+        .case-title {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            line-height: 1.2;
+        }
+        
+        .case-tagline {
+            font-size: 1.2rem;
+            color: var(--color-text-muted);
+            margin-bottom: 30px;
+        }
+        
+        .case-details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .detail-card {
+            padding: 20px;
+            text-align: left;
+        }
+        
+        .detail-card h4 {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--color-primary);
+            margin-bottom: 8px;
+        }
+        
+        .detail-card p {
+            font-size: 1.1rem;
+            color: #fff;
+            font-weight: 500;
+        }
+        
+        .case-content-layout {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 40px;
+            align-items: start;
+        }
+        
+        @media (max-width: 992px) {
+            .case-content-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .case-main-content {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        
+        .case-section h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            border-bottom: 1px solid var(--border-glass);
+            padding-bottom: 8px;
+            color: #fff;
+        }
+        
+        .case-section p {
+            color: var(--color-text-muted);
+            font-size: 1.05rem;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+        
+        .case-section ul {
+            list-style: none;
+            margin-bottom: 15px;
+        }
+        
+        .case-section ul li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 10px;
+            color: var(--color-text-muted);
+            font-size: 1.05rem;
+        }
+        
+        .case-section ul li::before {
+            content: "\f00c";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--color-primary);
+        }
+        
+        .case-sidebar {
+            position: sticky;
+            top: 100px;
+        }
+        
+        .case-media-wrapper {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--border-glass);
+            box-shadow: var(--shadow-neon-purple);
+            margin-bottom: 30px;
+            transition: var(--transition-smooth);
+        }
+        
+        .case-media-wrapper:hover {
+            transform: scale(1.02);
+            border-color: var(--border-glass-hover);
+            box-shadow: var(--shadow-neon);
+        }
+        
+        .case-media-wrapper img {
+            width: 100%;
+            display: block;
+            object-fit: cover;
+        }
+        
+        .cta-panel {
+            text-align: center;
+            border: 1px solid var(--border-glass);
+            background: linear-gradient(135deg, rgba(13,13,25,0.8) 0%, rgba(5,5,10,0.9) 100%);
+        }
+        
+        .cta-panel h3 {
+            font-size: 1.6rem;
+            margin-bottom: 12px;
+        }
+        
+        .cta-panel p {
+            color: var(--color-text-muted);
+            margin-bottom: 25px;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Scroll Progress Bar -->
+    <div id="scroll-progress" class="scroll-progress"></div>
+
+    <!-- Background Blobs -->
+    <div class="bg-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <!-- Header Navigation -->
+    <header id="main-header" class="scrolled">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                OSCAR LIMA<span class="logo-dot"></span>
+            </a>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html#portfolio" class="nav-link">
+                        <i class="fa-solid fa-arrow-left"></i> Voltar ao Portfólio
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="case-container">
+        
+        <!-- Breadcrumbs -->
+        <div class="breadcrumbs">
+            <a href="index.html">Início</a>
+            <i class="fa-solid fa-chevron-right"></i>
+            <a href="index.html#portfolio">Portfólio</a>
+            <i class="fa-solid fa-chevron-right"></i>
+            <span>M.A.R. Instituto</span>
+        </div>
+
+        <!-- Case Hero -->
+        <section class="case-hero">
+            <h1 class="case-title text-gradient">M.A.R. Instituto</h1>
+            <p class="case-tagline">Portal de notícias jurídicas de alta performance otimizado para navegação móvel instável.</p>
+        </section>
+
+        <!-- Project Meta Details -->
+        <section class="case-details-grid">
+            <div class="glass-panel detail-card">
+                <h4>Cliente / Parceria</h4>
+                <p>M.A.R. Instituto (RJSites)</p>
+            </div>
+            <div class="glass-panel detail-card">
+                <h4>Ano</h4>
+                <p>2025</p>
+            </div>
+            <div class="glass-panel detail-card">
+                <h4>Tecnologias</h4>
+                <p>WordPress, Astra Child Theme, PHP, CSS</p>
+            </div>
+            <div class="glass-panel detail-card">
+                <h4>Status</h4>
+                <p>Online & Ativo</p>
+            </div>
+        </section>
+
+        <!-- Content Layout -->
+        <div class="case-content-layout">
+            
+            <!-- Left: Main narrative -->
+            <article class="case-main-content">
+                
+                <section class="glass-panel case-section">
+                    <h3>O Desafio</h3>
+                    <p>O Movimento da Advocacia Renovada precisava de um portal institucional que servisse como hub central de posicionamento, agregando artigos, notícias jurídicas e materiais de apoio. A prioridade era a <strong>velocidade no celular</strong>, já que o público do portal é composto por advogados em trânsito, que consultam o site durante o expediente.</p>
+                    <p>Hospedar um portal de notícias pesados em planos de hospedagem compartilhada comuns pode causar lentidão e quedas de serviço constantes. Por isso, a plataforma precisava ter um consumo de dados enxuto e carregamento ultrarrápido.</p>
+                </section>
+
+                <section class="glass-panel case-section">
+                    <h3>A Solução</h3>
+                    <p>Desenvolvido em parceria com a <strong>rjsites.com.br</strong>, criamos uma solução leve construída sobre a base sólida do tema <strong>Astra</strong>. Eliminamos completamente qualquer construtor visual de arrastar e soltar (como o Elementor), que geraria milhares de linhas de códigos inúteis para um blog.</p>
+                    <p>O portal foi desenhado com o editor nativo (Gutenberg) aliado a estilos sob medida integrados ao tema filho. Isso garantiu controle absoluto do peso de cada imagem de destaque e otimizou as consultas no banco de dados para a exibição de artigos.</p>
+                </section>
+
+                <section class="glass-panel case-section">
+                    <h3>Diferencial & Bastidores</h3>
+                    <p>A otimização focou na entrega imediata do conteúdo textual. As fontes do site são hospedadas localmente no próprio servidor, evitando consultas lentas a servidores externos (Google Fonts). Além disso, implementamos carregamento preguiçoso (lazy load) de imagens configurado via código de forma nativa.</p>
+                    <p>Todo o CSS e JS do tema foi unificado e minificado, gerando páginas de notícias limpas que carregam instantaneamente mesmo em conexões de dados lentas (3G móvel).</p>
+                </section>
+
+                <section class="glass-panel case-section">
+                    <h3>Principais Resultados</h3>
+                    <ul>
+                        <li>Navegação mobile fluida e imediata, ideal para advogados em trânsito.</li>
+                        <li>Diminuição de requisições externas de fontes e mídias no primeiro carregamento.</li>
+                        <li>Excelente tempo de resposta do servidor mesmo sob picos de acesso pós-divulgação de novas notícias.</li>
+                        <li>Facilidade total de publicação para a equipe interna do Instituto via editor nativo simplificado.</li>
+                    </ul>
+                </section>
+
+            </article>
+
+            <!-- Right: Media & CTA -->
+            <aside class="case-sidebar">
+                
+                <div class="case-media-wrapper">
+                    <img src="assets/portfolio/marinstituto800x600.jpg" alt="M.A.R. Instituto Website">
+                </div>
+
+                <div class="glass-panel cta-panel">
+                    <h3>Visite o Portal Original</h3>
+                    <p>Veja na prática o funcionamento do portal corporativo do Movimento da Advocacia Renovada.</p>
+                    <a href="https://mar-instituto.org.br" target="_blank" class="btn btn-primary">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i> Acessar Site Original
+                    </a>
+                </div>
+
+            </aside>
+
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-socials">
+                <a href="https://github.com" target="_blank" class="footer-social-link" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="https://linkedin.com" target="_blank" class="footer-social-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://wa.me/5521991061796" target="_blank" class="footer-social-link" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="mailto:contato@oscarlima.com.br" class="footer-social-link" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+            <p class="footer-copyright">
+                &copy; 2026 Oscar Lima - Especialista WordPress & Desenvolvedor Front-end. Niterói, RJ. Todos os direitos reservados.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Local Premium JavaScript (Deferred) -->
+    <script src="js/main.js" defer></script>
+    <script src="js/cookie-consent.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,1373 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia Prático de Atalhos | ABNT2 & VS Code</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Tema Escuro (Padrão) */
+            --bg-body: #0b0f19;
+            --bg-surface: #111827;
+            --bg-card: #1f2937;
+            --bg-card-hover: #283548;
+            --border-subtle: #374151;
+            --border-accent: #3b82f6;
+            
+            --text-title: #f9fafb;
+            --text-main: #e5e7eb;
+            --text-muted: #9ca3af;
+            
+            --tag-bg: rgba(59, 130, 246, 0.15);
+            --tag-text: #60a5fa;
+
+            /* Cores dos Modificadores */
+            --k-ctrl: #3b82f6;
+            --k-shift: #8b5cf6;
+            --k-alt: #f59e0b;
+            --k-win: #06b6d4;
+            --k-general: #e2e8f0;
+            --k-bg: #1e293b;
+            --k-shadow: #0f172a;
+            
+            --tip-bg: rgba(16, 185, 129, 0.12);
+            --tip-border: #059669;
+            --tip-text: #34d399;
+
+            --badge-bg: #1e293b;
+        }
+
+        [data-theme="light"] {
+            /* Tema Claro Opcional */
+            --bg-body: #f8fafc;
+            --bg-surface: #ffffff;
+            --bg-card: #ffffff;
+            --bg-card-hover: #f1f5f9;
+            --border-subtle: #e2e8f0;
+            --border-accent: #2563eb;
+            
+            --text-title: #0f172a;
+            --text-main: #334155;
+            --text-muted: #64748b;
+            
+            --tag-bg: #eff6ff;
+            --tag-text: #1d4ed8;
+
+            --k-ctrl: #1d4ed8;
+            --k-shift: #6d28d9;
+            --k-alt: #b45309;
+            --k-win: #0891b2;
+            --k-general: #1e293b;
+            --k-bg: #f8fafc;
+            --k-shadow: #cbd5e1;
+            
+            --tip-bg: #ecfdf5;
+            --tip-border: #10b981;
+            --tip-text: #065f46;
+
+            --badge-bg: #f1f5f9;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            transition: background-color 0.25s, color 0.25s;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 1.5rem 1.25rem 4rem;
+        }
+
+        /* Top Bar & Header */
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border-subtle);
+            margin-bottom: 2rem;
+        }
+
+        .brand-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: var(--tag-text);
+            background: var(--tag-bg);
+            padding: 6px 14px;
+            border-radius: 999px;
+        }
+
+        .theme-toggle-btn {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            color: var(--text-main);
+            padding: 7px 14px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.2s;
+        }
+
+        .theme-toggle-btn:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-accent);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        h1 {
+            font-size: 2.4rem;
+            font-weight: 800;
+            color: var(--text-title);
+            margin-bottom: 0.6rem;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-desc {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        /* Destaque Didático ABNT2 */
+        .didactic-box {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            border-left: 6px solid #f59e0b;
+            border-radius: 14px;
+            padding: 1.5rem;
+            margin-bottom: 2.5rem;
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 1.25rem;
+            align-items: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+
+        .didactic-icon {
+            font-size: 2.5rem;
+        }
+
+        .didactic-text h3 {
+            font-size: 1.15rem;
+            color: var(--text-title);
+            margin-bottom: 0.3rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .didactic-text p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        .didactic-text strong {
+            color: var(--text-title);
+        }
+
+        /* Painel de Filtros e Busca */
+        .toolbar {
+            position: sticky;
+            top: 1rem;
+            z-index: 50;
+            background: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            border-radius: 14px;
+            padding: 0.85rem 1.2rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .search-wrapper {
+            flex: 1;
+            min-width: 260px;
+            position: relative;
+        }
+
+        .search-wrapper input {
+            width: 100%;
+            background: var(--bg-body);
+            border: 1px solid var(--border-subtle);
+            padding: 0.75rem 1rem 0.75rem 2.6rem;
+            border-radius: 10px;
+            color: var(--text-title);
+            font-size: 0.95rem;
+            outline: none;
+            transition: all 0.2s;
+        }
+
+        .search-wrapper input:focus {
+            border-color: var(--border-accent);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+        }
+
+        .search-wrapper .search-icon {
+            position: absolute;
+            left: 0.9rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1rem;
+            opacity: 0.6;
+        }
+
+        .filter-group {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-filter {
+            background: var(--bg-body);
+            border: 1px solid var(--border-subtle);
+            color: var(--text-muted);
+            padding: 0.55rem 1rem;
+            border-radius: 9px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-filter:hover {
+            color: var(--text-title);
+            border-color: var(--border-accent);
+        }
+
+        .btn-filter.active {
+            background: var(--border-accent);
+            border-color: var(--border-accent);
+            color: #ffffff;
+        }
+
+        /* Estrutura das Seções */
+        .section-container {
+            margin-bottom: 3.5rem;
+            scroll-margin-top: 5.5rem;
+        }
+
+        .section-headline {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid var(--border-subtle);
+        }
+
+        .section-headline h2 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--text-title);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-count {
+            font-size: 0.8rem;
+            font-weight: 700;
+            background: var(--badge-bg);
+            color: var(--text-muted);
+            padding: 4px 10px;
+            border-radius: 999px;
+            border: 1px solid var(--border-subtle);
+        }
+
+        /* Sub-seções temáticas para máxima legibilidade */
+        .sub-group-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--tag-text);
+            margin: 1.8rem 0 1rem 0;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        .sub-group-title:first-of-type {
+            margin-top: 0;
+        }
+
+        /* Grid de Cards */
+        .cards-layout {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 1.25rem;
+        }
+
+        .shortcut-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 14px;
+            padding: 1.35rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+            position: relative;
+        }
+
+        .shortcut-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--border-accent);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.18);
+        }
+
+        .card-header-line {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 0.75rem;
+        }
+
+        .action-emoji {
+            font-size: 1.4rem;
+            line-height: 1;
+            background: var(--bg-surface);
+            padding: 6px;
+            border-radius: 8px;
+            border: 1px solid var(--border-subtle);
+        }
+
+        .card-main-info {
+            flex: 1;
+        }
+
+        .action-name {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 0.25rem;
+        }
+
+        .action-explanation {
+            font-size: 0.92rem;
+            color: var(--text-main);
+            line-height: 1.5;
+        }
+
+        /* Dica contextual de uso */
+        .practical-use {
+            margin-top: 0.75rem;
+            font-size: 0.83rem;
+            color: var(--tip-text);
+            background: var(--tip-bg);
+            border-left: 3px solid var(--tip-border);
+            padding: 6px 10px;
+            border-radius: 0 6px 6px 0;
+            line-height: 1.4;
+        }
+
+        .practical-use.warning {
+            color: #fbbf24;
+            background: rgba(245, 158, 11, 0.12);
+            border-left-color: #f59e0b;
+        }
+
+        /* Visual das Teclas (KBD) Grandes e Nítidas */
+        .keys-row {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            flex-wrap: wrap;
+            margin-top: 1.2rem;
+            padding-top: 1rem;
+            border-top: 1px dashed var(--border-subtle);
+        }
+
+        kbd {
+            font-family: 'Fira Code', monospace;
+            background: var(--k-bg);
+            color: var(--k-general);
+            border: 1px solid var(--border-subtle);
+            border-bottom: 3.5px solid var(--k-shadow);
+            border-radius: 8px;
+            padding: 0.35rem 0.65rem;
+            font-size: 0.92rem;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+            letter-spacing: 0.02em;
+            white-space: nowrap;
+        }
+
+        /* Destaque de cores nos botões de controle */
+        kbd.k-ctrl { color: var(--k-ctrl); border-color: rgba(59, 130, 246, 0.4); }
+        kbd.k-shift { color: var(--k-shift); border-color: rgba(139, 92, 246, 0.4); }
+        kbd.k-alt { color: var(--k-alt); border-color: rgba(245, 158, 11, 0.4); }
+        kbd.k-win { color: var(--k-win); border-color: rgba(6, 182, 212, 0.4); }
+
+        .sep-plus {
+            color: var(--text-muted);
+            font-weight: 800;
+            font-size: 0.9rem;
+        }
+
+        .sep-or {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin: 0 3px;
+        }
+
+        /* Caixa de Prática Interativa */
+        .practice-sandbox {
+            background: var(--bg-surface);
+            border: 2px dashed var(--border-accent);
+            border-radius: 14px;
+            padding: 1.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .practice-sandbox h3 {
+            font-size: 1.2rem;
+            color: var(--text-title);
+            margin-bottom: 0.4rem;
+        }
+
+        .practice-sandbox p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .practice-input {
+            width: 100%;
+            max-width: 550px;
+            padding: 0.85rem 1.2rem;
+            background: var(--bg-body);
+            border: 1px solid var(--border-subtle);
+            border-radius: 10px;
+            color: var(--text-title);
+            font-size: 1rem;
+            text-align: center;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .practice-input:focus {
+            border-color: var(--border-accent);
+        }
+
+        .practice-feedback {
+            margin-top: 0.75rem;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--tag-text);
+            min-height: 24px;
+        }
+
+        /* Estado Vazio */
+        .no-results {
+            display: none;
+            text-align: center;
+            padding: 4rem 1rem;
+            background: var(--bg-surface);
+            border-radius: 14px;
+            border: 1px solid var(--border-subtle);
+        }
+
+        .no-results h3 {
+            color: var(--text-title);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 4rem;
+            text-align: center;
+            padding: 2.5rem 1rem;
+            border-top: 1px solid var(--border-subtle);
+            color: var(--text-muted);
+            font-size: 0.92rem;
+        }
+
+        footer a {
+            color: var(--tag-text);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .print-btn {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            color: var(--text-main);
+            padding: 8px 18px;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 1.2rem;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .print-btn:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-accent);
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 1.85rem; }
+            .toolbar { flex-direction: column; align-items: stretch; }
+            .filter-group { justify-content: center; }
+            .cards-layout { grid-template-columns: 1fr; }
+            .didactic-box { grid-template-columns: 1fr; }
+            .didactic-icon { display: none; }
+        }
+
+        @media print {
+            body { background: #ffffff !important; color: #000000 !important; }
+            .toolbar, .top-nav, .practice-sandbox, .print-btn { display: none !important; }
+            .shortcut-card {
+                background: #ffffff !important;
+                border: 1px solid #d1d5db !important;
+                break-inside: avoid;
+                box-shadow: none !important;
+                color: #000000 !important;
+            }
+            .action-name, h1, h2, h3 { color: #000000 !important; }
+            .action-explanation, .practical-use, .hero-desc { color: #374151 !important; }
+            kbd {
+                background: #f3f4f6 !important;
+                color: #000000 !important;
+                border: 1px solid #9ca3af !important;
+                border-bottom: 2px solid #4b5563 !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- Barra de Navegação do Topo -->
+        <nav class="top-nav">
+            <span class="brand-badge">⚡ Curso Técnico em Desenvolvimento de Sistemas</span>
+            <button class="theme-toggle-btn" id="themeToggle" title="Alternar entre tema escuro e claro">
+                <span id="themeIcon">☀️</span> Modo Claro
+            </button>
+        </nav>
+
+        <header>
+            <h1>Guia Visual de Atalhos de Teclado</h1>
+            <p class="hero-desc">Domine a navegação ágil no computador e no VS Code. Troque o mouse pelo teclado e ganhe velocidade real de desenvolvimento!</p>
+        </header>
+
+        <!-- Destaque Explicativo do Padrão ABNT2 -->
+        <div class="didactic-box">
+            <div class="didactic-icon">🇧🇷</div>
+            <div class="didactic-text">
+                <h3>Teclado Padrão Brasileiro (Norma ABNT2)</h3>
+                <p>O teclado <strong>ABNT2</strong> possui a tecla <strong>Ç</strong> e posiciona os caracteres de pontuação (como <code>;</code>, <code>/</code>, <code>?</code> e <code>~</code>) de forma única. Neste guia, atalhos do VS Code foram especialmente adaptados para funcionar de primeira no seu teclado!</p>
+            </div>
+        </div>
+
+        <!-- Área de Treinamento Rápido -->
+        <div class="practice-sandbox">
+            <h3>🎯 Área de Teste Prático de Atalhos</h3>
+            <p>Clique no campo abaixo e experimente pressionar atalhos como <kbd class="k-ctrl">Ctrl</kbd>+<kbd>C</kbd>, <kbd class="k-ctrl">Ctrl</kbd>+<kbd>V</kbd>, <kbd class="k-ctrl">Ctrl</kbd>+<kbd>Z</kbd> ou <kbd class="k-ctrl">Ctrl</kbd>+<kbd>A</kbd>:</p>
+            <input type="text" class="practice-input" id="practiceBox" placeholder="Clique aqui e teste um atalho no seu teclado..." value="Texto de exemplo para você recortar e colar!">
+            <div class="practice-feedback" id="practiceFeedback">Aguardando comando...</div>
+        </div>
+
+        <!-- Barra de Ferramentas (Busca e Filtros) -->
+        <div class="toolbar">
+            <div class="search-wrapper">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="searchInput" placeholder="Buscar por ação (ex: duplicar, terminal, desfazer, abas)...">
+            </div>
+            <div class="filter-group">
+                <button class="btn-filter active" data-filter="all">Todos</button>
+                <button class="btn-filter" data-filter="windows">🪟 Windows</button>
+                <button class="btn-filter" data-filter="navegador">🌐 Navegador</button>
+                <button class="btn-filter" data-filter="vscode">💻 VS Code</button>
+            </div>
+        </div>
+
+        <!-- ================= SESSÃO 1: WINDOWS ================= -->
+        <section class="section-container" data-category="windows" id="sec-windows">
+            <div class="section-headline">
+                <h2><span>🪟</span> 1. Atalhos Fundamentais do Windows</h2>
+                <span class="section-count">14 Atalhos</span>
+            </div>
+
+            <!-- Sub-grupo: Edição Básica -->
+            <div class="sub-group-title">📝 Edição & Seleção de Texto</div>
+            <div class="cards-layout">
+
+                <div class="shortcut-card" data-keywords="copiar copy texto arquivos">
+                    <div class="card-header-line">
+                        <span class="action-emoji">📋</span>
+                        <div class="card-main-info">
+                            <div class="action-name">Copiar</div>
+                            <div class="action-explanation">Salva o texto ou arquivo selecionado na memória do computador sem apagá-lo.</div>
+                            <div class="practical-use">💡 <strong>No dia a dia:</strong> Selecione um código, dê Ctrl+C e leve para outro arquivo.</div>
+                        </div>
+                    </div>
+                    <div class="keys-row">
+                        <kbd class="k-ctrl">Ctrl</kbd> <span class="sep-plus">+</span> <kbd>C</kbd>
+                    </div>
+                </div>
+
+                <div class="shortcut-card" data-keywords="colar paste texto inserir">
+                    <div class="card-header-line">
+                        <span class="action-emoji">📄</span>
+                        <div class="card-main-info">
+                            <div class="action-name">Colar</div>
+                            <div class="action-explanation">Insere exatamente na posição do cursor o conteúdo que você copiou anteriormente.</div>
+                            <div class="practical-use">💡 <strong>No dia a dia:</strong> Posicione o cursor onde deseja o texto e dê Ctrl+V.</div>
+                        </div>
+                    </div>
+                    <div class="keys-row">
+                        <kbd class="k-ctrl">Ctrl</kbd> <span class="sep-plus">+</span> <kbd>V</kbd>
+                    </div>
+                </div>
+
+                <div class="shortcut-card" data-keywords="recortar cut mover texto">
+                    <div class="card-header-line">
+                        <span class="action-emoji">✂️</span>
+                        <div class="card-main-info">
+                            <div class="action-name">Recortar</div>
+                            <div class="action-explanation">Copia o item selecionado e o <strong>remove</strong> de onde ele estava.</div>
+                            <div class="practical-use">💡 <strong>No dia a dia:</strong> Perfeito para mudar um bloco de código de lugar.</div>
+                        </div>
+                    </div>
+                    <div class="keys-row">
+                        <kbd class="k-ctrl">Ctrl</kbd> <span class="sep-plus">+</span> <kbd>X</kbd>
+                    </div>
+                </div>
+
+                <div class="shortcut-card" data-keywords="desfazer undo voltar correcao erro">
+                    <div class="card-header-line">
+                        <span class="action-emoji">↩️</span>
+                        <div class="card-main-info">
+                            <div class="action-name">Desfazer (O Salva-Vidas)</div>
+                            <div class="action-explanation">Cancela imediatamente a última alteração feita. Apagou algo sem querer? Use já!</div>
+                            <div class="practical-use">⭐ <strong>Dica:</strong> Pode ser pressionado várias vezes seguidas para voltar no tempo.</div>
+                        </div>
+                    </div>
+                    <div class="keys-row">
+                        <kbd class="k-ctrl">Ctrl</kbd> <span class="sep-plus">+</span> <kbd>Z</kbd>
+                    </div>
+                </div>
+
+                <div class="shortcut-card" data-keywords="refazer redo avancar">
+                    <div class="card-header-line">
+                        <span class="action-emoji">↪️</span>
+                        <div class="card-main-info">
+                            <div class="action-name">Refazer</div>
+                            <div class="action-explanation">Avança novamente caso você tenha apertado Ctrl+Z além da conta.</div>
+                            <div class="practical-use">💡 <strong>No dia a dia:</strong> Restaura o que o Desfazer acabou de apagar.</div>
+                        </div>
+                    </div>
+                    <div class="keys-row">
+                        <kbd class="k-ctrl">Ctrl</kbd> <span class="sep-plus">+</span> <kbd>Y</kbd>
+                    </div>
+                </div>
+
+                <div class="shortcut-card" data-keywords="selecionar tudo select all">
+                    <div class="card-header-line">
+                        <span class="action-emoji">🔘</span>
+                        <div class="card-main-info">
+                            <div class="action-name">Selecionar Tudo</div>
+                            <div class="action-explanation">Marca todo o texto da página, código do arquivo ou todos os itens de uma pasta.</div>
+                            <div class="practical-use">💡 <strong>No dia a dia:</strong> Ctrl+A seguido de Ctrl+C copia o arquivo inteiro.</div>
+                        </div>
+                    </div>
+                    <div class="keys-row">
+                        <kbd class="k-ctrl">Ctrl</kbd> <span class="sep-plus">+</span> <kbd>A</kbd>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Sub-grupo: Janelas & Sistema -->
+            <div class="sub-group-title">🗂️ Janelas, Multitarefa & Produtividade</div>
+            <div class="cards-layout">
+
+                <div class="shortcut-card" data-keywords="alternar janelas trocar programa alt tab multitarefa">
+                    <div class="card-header-line">
+                        <span class="action-emoji">🔁</span>
+                        <div class="card-main-info">
+                            <div class="action-name">Alternar Entre Janelas</div>
+                            <div class="action-explanation">Mude de um aplicativo para outro sem precisar tirar a mão do teclado para clicar na barra.</div>
+                            <div class="practical-use">💡 <strong>Como usar:</strong> Segure <kbd class="k-alt">Alt</kbd> e vá apertando <kbd>Tab</kbd>.</div>
+                        </div>
+                    </div>
+                    <div class="keys-row">
+                        <kbd class="k-alt">Alt</kbd> <span class="sep-plus">+</span> <kbd>Tab</kbd>
+                    </div>
+                </div>
+
+                <div class="shortcut-card" data-keywords="historico clipboard varios copiar colar area transferencia">
+                    <div class="card-header-line">
+                        <span class="action-emoji">🗃️</span>
+                        <div class="card-main-info">
+                            <div class="action-name">Histórico de Cópia (Clipboard)</div>
+                            <div class="action-explanation">Abre um menu com os últimos 25 itens que você copiou para colar qualquer um deles.</div>
+                            <div class="practical-use">⚡ <strong>Super poder:</strong> Copie 4 coisas seguidas e cole na ordem desejada.</div>
+                        </div>
+                    </div>
+                    <div class="keys-row">
+                        <kbd class="k-win">⊞ Win</kbd> <span class="sep-plus">+</span> <kbd>V</kbd>
+                    </div>
+                </div>
+
+                <div class="shortcut-card" data-keywords="print printscreen recorte captura de tela screenshot">
+                    <div class="card-header-line">
+                        <span class="action-emoji">📸</span>
+                        <div class="card-main-info">
+                            <div class="action-name">Captura de Tela Seletiva (Print)</div>
+                            <div class="action-explanation">Permite selecionar com o mouse apenas um retângulo da tela para copiar a foto do erro ou código.</div>
+                            <div class="practical-use">💡 <strong>No dia a dia:</strong> Dê o atalho, selecione a área e dê Ctrl+V no Discord/WhatsApp.</div>
+                        </div>
+                    </div>
+                    <div class="keys-row">
+                        <kbd class="k-win">⊞ Win</kbd> <span class="sep-plus">+</span> <kbd class="k-shift">Shift</kbd> <span class="sep-plus">+</span> <kbd>S</kbd>
+                    </div>
+                </div>
+
+                <div class="shortcut-card" data-keywords="desktop area de trabalho minimizar tudo">
+                    <div class="card-header-line">
+                        <span class="action-emoji">🖥️</span>
+                        <div class="card-main-info">
+                            <div class="action-name">Mostrar / Ocultar Área de Trabalho</div>
+                            <div class="action-explanation">Minimiza instantaneamente todas as janelas para visualizar seu Desktop.</div>
+                            <div class="practical-use">💡 <strong>No dia a dia:</strong> Aperte novamente para restaurar todas as janelas.</div>
+                        </div>
+                    </div>
+                    <div class="keys-row">
+                        <kbd class="k-win">⊞ Win</kbd> <span class="sep-plus">+</span> <kbd>D</kbd>
+                    </div>
+                </div>
+
+                <div class="shortcut-card" data-keywords="explorador arquivos pastas meu computador files">
+                    <div class="card-header-line">
+                        <span class="action-emoji">📁</span>
+                        <div class="card-main-info">
+                            <div class="action-name">Abrir Explorador de Arquivos</div>
+                            <div class="action-explanation">Abre o gerenciador de pastas do Windows de imediato.</div>
+                            <div class="practical-use">💡 <strong>No dia a dia:</strong> Chega de caçar o ícone amarelo na barra de tarefas!</div>
+                        </div>
+                    </div>
+                    <div class="keys-row">
+                        <kbd class="k-win">⊞ Win</kbd> <span class="sep-plus">+</span> <kbd>E</kbd>
+                    </div>
+                </div>
+
+                <div class="shortcut-card" data-keywords="gerenciador tarefas travar destravar fechar programa task manager">
+                    <div class="card-header-line">
+                        <span class="action-emoji">⚡</span>
+                        <div class="card-main-info">
+                            <div class="action-name">Gerenciador de Tarefas Direto</div>
+                            <div class="action-explanation">Abre direto a tela para finalizar programas que travaram.</div>
+                            <div class="practical-use">💡 <strong>Vantagem:</strong> Muito mais rápido do que dar Ctrl+Alt+Del.</div>
+                        </div>
+                    </div>
+                    <div class="keys-row">
+                        <kbd class="k-ctrl">Ctrl</kbd> <span class="sep-plus">+</span> <kbd class="k-shift">Shift</kbd> <span class="sep-plus">+</span> <kbd>Esc</kbd>
+                    </div>
+                </div>
+
+                <div class="shortcut-card" data-keywords="renomear arquivo pasta f2 rename">
+                    <div class="card-header-line">
+                        <span class="action-emoji">🏷️</span>
+                        <div class="card-main-info">
+                            <div class="action-name">Renomear Arquivo / Pasta</div>
+                            <div class="action-explanation">Permite editar o nome do item selecionado sem o risco de abri-lo por engano.</div>
+                            <div class="practical-use">💡 <strong>No dia a dia:</strong> Funciona tanto no Windows quanto dentro do VS Code.</div>
+                        </div>
+                    </div>
+                    <div class="keys-row">
+                        <kbd>F2</kbd>
+                    </div>
+                </div>
+
+                <div class="shortcut-card" data-keywords="bloquear tela computador privacidade sair">
+                    <div class="card-header-line">
+                        <span class="action-emoji">🔒</span>
+                        <div class="card-main-info">
+                            <div class="action-name">Bloquear Computador</div>
+                            <div class="action-explanation">Bloqueia a sessão do Windows exigindo senha ao retornar.</div>
+                            <div class="practical-use">🛡️ <strong>Segurança:</strong> Use sempre que levantar da mesa na aula ou no estágio.</div>
+                        </div>
+                    </div>
+                    <div class="keys-row">
+                        <kbd class="k-win">⊞ Win</kbd> <span class="sep-plus">+</span> <kbd>L</kbd>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ================= SESSÃO 2: NAVEGADOR WEB ================= -->
+        <section class="section-container" data-category="navegador" id="sec-navegador">
+            <div class="section-headline">
+                <h2><span>🌐</span> 2. Atalhos de Navegação Web (Chrome, Edge, Firefox)</h2>
+                <span class="section-count">10 Atalhos</span>
+            </div>
+
+            <!-- Sub-grupo: Gerenciamento de Abas -->
+            <div class="sub-group-title">📑 Controle de Abas & Janelas</div>
+            <div class="cards-layout">
+
+                <div class="shortcut-card" data-keywords="nova aba new tab guia">
+                    <div class="card-header-line">
+                        <span class="action-emoji">➕</span>
+                        <div class="card-main-info">
+                            <div class="action-name">Nova Aba</div>
+                            <div class="action-explanation">Abre uma nova guia no navegador imediatamente com foco na pesquisa.</div>
+                            <div class="practical-use">💡 <strong>No dia a dia:</strong> Aperte Ctrl+T e já comece a digitar a busca.</div>
+                        </div>
+                    </div>
+                    <div class="keys-row">
+                        <kbd class="k-ctrl">Ctrl</kbd> <span class="sep-plus">+</span> <kbd>T</kbd>
+                    </div>
+                </div>
+
+                <div class="shortcut-card" data-keywords="fechar aba close tab fechar guia">
+                    <div class="card-header-line">
+                        <span class="action-emoji">❌</span>
+                        <div class="card-main-info">
+                            <div class="action-name">Fechar Aba Atual</div>
+                            <div class="action-explanation">Encerra a guia visualizada sem precisar acertar o 'x' minúsculo do mouse.</div>
+                            <div class="practical-use">💡 <strong>No dia a dia:</strong> Funciona também para fechar abas de código no VS Code!</div>
+                        </div>
+                    </div>
+                    <div class="keys-row">
+                        <kbd class="k-ctrl">Ctrl</kbd> <span class="sep-plus">+</span> <kbd>W</kbd>
+                    </div>
+                </div>
+
+                <div class="shortcut-card" data-keywords="reabrir aba guia fechou sem querer restaurar historico">
+                    <div class="card-header-line">
+                        <span class="action-emoji">🔮</span>
+                        <div class="card-main-info">
+                            <div class="action-name">Reabrir Aba Fechada por Engano</div>
+                            <div class="action-explanation">Restaura a última aba que você fechou acidentalmente com todo o histórico intacto.</div>
+                            <div class="practical-use">⭐ <strong>Indispensável:</strong> Evita o desespero de perder artigos ou pesquisas.</div>
+                        </div>
+                    </div>
+                    <div class="keys-row">
+                        <kbd class="k-ctrl">Ctrl</kbd> <span class="sep-plus">+</span> <kbd class="k-shift">Shift</kbd> <span class="sep-plus">+</span> <kbd>T</kbd>
+                    </div>
+                </div>
+
+                <div class="shortcut-card" data-keywords="alternar abas proxima aba trocar guia">
+                    <div class="card-header-line">
+                        <span class="action-emoji">➡️</span>
+                        <div class="card-main-info">
+                            <div class="action-name">Alternar Entre Abas</div>
+                            <div class="action-explanation">Pula para a próxima aba à direita. Use com <kbd class="k-shift">Shift</kbd> para voltar à esquerda.</div>
+                            <div class="practical-use">💡 <strong>No dia a dia:</strong> Navegue por 10 abas abertas sem tocar no mouse.</div>
+                        </div>
+                    </div>
+                    <div class="keys-row">
+                        <kbd class="k-ctrl">Ctrl</kbd> <span class="sep-plus">+</span> <kbd>Tab</kbd>
+                    </div>
+                </div>
+
+                <div class="shortcut-card" data-keywords="janela anonima privada incognito">
+                    <div class="card-header-line">
+                        <span class="action-emoji">🕵️</span>
+                        <div class="card-main-info">
+                            <div class="action-name">Janela Anônima / Privada</div>
+                            <div class="action-explanation">Abre o navegador sem cookies ou contas logadas.</div>
+                            <div class="practical-use">💡 <strong>Para Devs:</strong> Excelente para testar telas de login e cadastros do zero.</div>
+                        </div>
+                    </div>
+                    <div class="keys-row">
+                        <kbd class="k-ctrl">Ctrl</kbd> <span class="sep-plus">+</span> <kbd class="k-shift">Shift</kbd> <span class="sep-plus">+</span> <kbd>N</kbd>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Sub-grupo: Navegação & Debug -->
+            <div class="sub-group-title">🔍 Pesquisa & Ferramentas de Desenvolvimento</div>
+            <div class="cards-layout">
+
+                <div class="shortcut-card" data-keywords="barra endereco url link digitar site">
+                    <div class="card-header-line">
+                        <span class="action-emoji">🔗</span>
+                        <div class="card-main-info">
+                            <div class="action-name">Focar na Barra de Endereço (URL)</div>
+                            <div class="action-explanation">Seleciona a barra de links pronta para você digitar um novo endereço ou pesquisar.</div>
+                            <div class="practical-use">💡 <strong>No dia a dia:</strong> Aperte Ctrl+L, dê Ctrl+C e copie o link da página em 1 segundo.</div>
+                        </div>
+                    </div>
+                    <div class="keys-row">
+                        <kbd class="k-ctrl">Ctrl</kbd> <span class="sep-plus">+</span> <kbd>L</kbd> <span class="sep-or">ou</span> <kbd class="k-alt">Alt</kbd> <span class="sep-plus">+</span> <kbd>D</kbd>
+                    </div>
+                </div>
+
+                <div class="shortcut-card" data-keywords="buscar localizar procurar palavra texto">
+                    <div class="card-header-line">
+                        <span class="action-emoji">🔎</span>
+                        <div class="card-main-info">
+                            <div class="action-name">Buscar / Localizar na Página</div>
+                            <div class="action-explanation">Abre o campo de busca interna para encontrar termos na página ou documentação.</div>
+                            <div class="practical-use">💡 <strong>No dia a dia:</strong> Ache rapidamente o erro ou a função que procura.</div>
+                        </div>
+                    </div>
+                    <div class="keys-row">
+                        <kbd class="k-ctrl">Ctrl</kbd> <span class="sep-plus">+</span> <kbd>F</kbd>
+                    </div>
+                </div>
+
+                <div class="shortcut-card" data-keywords="hard refresh limpar cache forcar recarga css nao atualiza">
+                    <div class="card-header-line">
+                        <span class="action-emoji">⚡</span>
+                        <div class="card-main-info">
+                            <div class="action-name">Recarregar Limpando o Cache</div>
+                            <div class="action-explanation">Força o navegador a baixar os arquivos CSS/JS novos sem usar versões antigas em memória.</div>
+                            <div class="practical-use">🔥 <strong>Dica de Ouro:</strong> Mudou o CSS mas a tela não mudou? Use este atalho!</div>
+                        </div>
+                    </div>
+                    <div class="keys-row">
+                        <kbd class="k-ctrl">Ctrl</kbd> <span class="sep-plus">+</span> <kbd>F5</kbd> <span class="sep-or">ou</span> <kbd class="k-ctrl">Ctrl</kbd> <span class="sep-plus">+</span> <kbd class="k-shift">Shift</kbd> <span class="sep-plus">+</span> <kbd>R</kbd>
+                    </div>
+                </div>
+
+                <div class="shortcut-card" data-keywords="inspecionar devtools console f12 inspecionar elemento console erro js">
+                    <div class="card-header-line">
+                        <span class="action-emoji">🛠️</span>
+                        <div class="card-main-info">
+                            <div class="action-name">Inspecionar Elemento (DevTools)</div>
+                            <div class="action-explanation">Abre o console de erros JavaScript, o painel de redes e o editor ao vivo de HTML/CSS.</div>
+                            <div class="practical-use">💻 <strong>Essencial:</strong> A principal ferramenta de depuração de todo programador web.</div>
+                        </div>
+                    </div>
+                    <div class="keys-row">
+                        <kbd>F12</kbd> <span class="sep-or">ou</span> <kbd class="k-ctrl">Ctrl</kbd> <span class="sep-plus">+</span> <kbd class="k-shift">Shift</kbd> <span class="sep-plus">+</span> <kbd>I</kbd>
+                    </div>
+                </div>
+
+                <div class="shortcut-card" data-keywords="zoom aumentar diminuir tamanho texto">
+                    <div class="card-header-line">
+                        <span class="action-emoji">🔍</span>
+                        <div class="card-main-info">
+                            <div class="action-name">Ajustar / Resetar Zoom</div>
+                            <div class="action-explanation">Aumenta (<kbd>+</kbd>), diminui (<kbd>-</kbd>) ou retorna a página para o tamanho padrão 100% (<kbd>0</kbd>).</div>
+                            <div class="practical-use">💡 <strong>No dia a dia:</strong> Excelente para testar responsividade de layouts.</div>
+                        </div>
+                    </div>
+                    <div class="keys-row">
+                        <kbd class="k-ctrl">Ctrl</kbd> <span class="sep-plus">+</span> <kbd>+</kbd> <span class="sep-or">/</span> <kbd>-</kbd> <span class="sep-or">/</span> <kbd>0</kbd>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ================= SESSÃO 3: VS CODE ================= -->
+        <section class="section-container" data-category="vscode" id="sec-vscode">
+            <div class="section-headline">
+                <h2><span>💻</span> 3. Atalhos do Visual Studio Code (VS Code)</h2>
+                <span class="section-count">16 Atalhos</span>
+            </div>
+
+            <!-- Sub-grupo: Edição de Linhas -->
+            <div class="sub-group-title">⚡ Manipulação & Edição de Linhas</div>
+            <div class="cards-layout">
+
+                <div class="shortcut-card" data-keywords="comentar descomentar linha bloco codigo abnt2 ponto e virgula barra">
+                    <div class="card-header-line">
+                        <span class="action-emoji">💬</span>
+                        <div class="card-main-info">
+                            <div class="action-name">Comentar / Descomentar Linha (ABNT2)</div>
+                            <div class="action-explanation">Transforma a linha ou seleção em comentário (ou remove as barras de comentário).</div>
+                            <div class="practical-use warning">⚠️ <strong>No ABNT2:</strong> A tecla padrão no Brasil é o <strong>ponto e vírgula ( ; )</strong>!</div>
+                        </div>
+                    </div>
+                    <div class="keys-row">
+                        <kbd class="k-ctrl">Ctrl</kbd> <span class="sep-plus">+</span> <kbd>;</kbd> <span class="sep-or">ou</span> <kbd class="k-ctrl">Ctrl</kbd> <span class="sep-plus">+</span> <kbd>/</kbd>
+                    </div>
+                </div>
+
+                <div class="shortcut-card" data-keywords="duplicar linha clonar linha copiar linha baixo cima shift alt">
+                    <div class="card-header-line">
+                        <span class="action-emoji">👯</span>
+                        <div class="card-main-info">
+                            <div class="action-name">Duplicar Linha de Código</div>
+                            <div class="action-explanation">Clona a linha atual inteira para baixo ou para cima instantaneamente sem precisar selecionar!</div>
+                            <div class="practical-use">⚡ <strong>Agilidade:</strong> Nunca mais copie e cole para repetir uma linha.</div>
+                        </div>
+                    </div>
+                    <div class="keys-row">
+                        <kbd class="k-shift">Shift</kbd> <span class="sep-plus">+</span> <kbd class="k-alt">Alt</kbd> <span class="sep-plus">+</span> <kbd>↓</kbd> <span class="sep-or">ou</span> <kbd>↑</kbd>
+                    </div>
+                </div>
+
+                <div class="shortcut-card" data-keywords="mover linha subir linha descer linha trocar ordem alt">
+                    <div class="card-header-line">
+                        <span class="action-emoji">↕️</span>
+                        <div class="card-main-info">
+                            <div class="action-name">Mover Linha para Cima / Baixo</div>
+                            <div class="action-explanation">Desloca a linha ou bloco selecionado para cima ou para baixo com total fluidez.</div>
+                            <div class="practical-use">💡 <strong>No dia a dia:</strong> Reorganize a ordem de variáveis e funções em segundos.</div>
+                        </div>
+                    </div>
+                    <div class="keys-row">
+                        <kbd class="k-alt">Alt</kbd> <span class="sep-plus">+</span> <kbd>↑</kbd> <span class="sep-or">ou</span> <kbd>↓</kbd>
+                    </div>
+                </div>
+
+                <div class="shortcut-card" data-keywords="apagar linha inteira deletar linha k">
+                    <div class="card-header-line">
+                        <span class="action-emoji">🗑️</span>
+                        <div class="card-main-info">
+                            <div class="action-name">Apagar Linha Inteira</div>
+                            <div class="action-explanation">Deleta a linha inteira onde está o cursor sem precisar selecionar com o mouse.</div>
+                            <div class="practical-use">💡 <strong>No dia a dia:</strong> Muito mais limpo do que segurar o Backspace.</div>
+                        </div>
+                    </div>
+                    <div class="keys-row">
+                        <kbd class="k-ctrl">Ctrl</kbd> <span class="sep-plus">+</span> <kbd class="k-shift">Shift</kbd> <span class="sep-plus">+</span> <kbd>K</kbd>
+                    </div>
+                </div>
+
+                <div class="shortcut-card" data-keywords="formatar codigo identar arrumar espacos prettier format documento">
+                    <div class="card-header-line">
+                        <span class="action-emoji">✨</span>
+                        <div class="card-main-info">
+                            <div class="action-name">Formatar Código (Indentação)</div>
+                            <div class="action-explanation">Alinha chaves, quebras de linha e espaços do arquivo de forma profissional e legível.</div>
+                            <div class="practical-use">⭐ <strong>Indispensável:</strong> Código bagunçado? Aperte este atalho e veja a mágica!</div>
+                        </div>
+                    </div>
+                    <div class="keys-row">
+                        <kbd class="k-shift">Shift</kbd> <span class="sep-plus">+</span> <kbd class="k-alt">Alt</kbd> <span class="sep-plus">+</span> <kbd>F</kbd>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Sub-grupo: Cursores & Múltiplas Seleções -->
+            <div class="sub-group-title">🎯 Seleções Múltiplas & Produtividade Extrema</div>
+            <div class="cards-layout">
+
+                <div class="shortcut-card" data-keywords="selecionar proxima ocorrencia multicursor variavel renomear ctrl d">
+                    <div class="card-header-line">
+                        <span class="action-emoji">🪄</span>
+                        <div class="card-main-info">
+                            <div class="action-name">Selecionar Próxima Ocorrência</div>
+                            <div class="action-explanation">Selecione uma palavra ou tag e aperte repetidamente para editar todas juntas com múltiplos cursores.</div>
+                            <div class="practical-use">⚡ <strong>Produtividade:</strong> Altere o nome de uma variável repetida no código simultaneamente.</div>
+                        </div>
+                    </div>
+                    <div class="keys-row">
+                        <kbd class="k-ctrl">Ctrl</kbd> <span class="sep-plus">+</span> <kbd>D</kbd>
+                    </div>
+                </div>
+
+                <div class="shortcut-card" data-keywords="todas ocorrencias editar tudo ao mesmo tempo ctrl shift l">
+                    <div class="card-header-line">
+                        <span class="action-emoji">💥</span>
+                        <div class="card-main-info">
+                            <div class="action-name">Selecionar Todas as Ocorrências</div>
+                            <div class="action-explanation">Cria cursores em todas as palavras idênticas do arquivo inteiro de uma só vez.</div>
+                            <div class="practical-use">💡 <strong>No dia a dia:</strong> Renomeie uma classe CSS repetida 30 vezes em 1 segundo.</div>
+                        </div>
+                    </div>
+                    <div class="keys-row">
+                        <kbd class="k-ctrl">Ctrl</kbd> <span class="sep-plus">+</span> <kbd class="k-shift">Shift</kbd> <span class="sep-plus">+</span> <kbd>L</kbd>
+                    </div>
+                </div>
+
+                <div class="shortcut-card" data-keywords="multiplos cursores livres clicar digitar varios lugares alt clique">
+                    <div class="card-header-line">
+                        <span class="action-emoji">🖱️</span>
+                        <div class="card-main-info">
+                            <div class="action-name">Inserir Múltiplos Cursores Livres</div>
+                            <div class="action-explanation">Segure o Alt e vá clicando com o mouse em linhas diferentes para digitar nelas ao mesmo tempo.</div>
+                            <div class="practical-use">💡 <strong>No dia a dia:</strong> Adicione aspas ou vírgulas em 10 itens de um array juntos.</div>
+                        </div>
+                    </div>
+                    <div class="keys-row">
+                        <kbd class="k-alt">Alt</kbd> <span class="sep-plus">+</span> <kbd>Clique com Mouse</kbd>
+                    </div>
+                </div>
+
+                <div class="shortcut-card" data-keywords="autocompletar intellisense sugestoes sugestao codigo completar">
+                    <div class="card-header-line">
+                        <span class="action-emoji">💡</span>
+                        <div class="card-main-info">
+                            <div class="action-name">Forçar Autocompletar (IntelliSense)</div>
+                            <div class="action-explanation">Reabre a lista suspensa com sugestões de métodos, variáveis, tags HTML e CSS.</div>
+                            <div class="practical-use">💡 <strong>No dia a dia:</strong> Esqueceu o nome exato de uma propriedade? Use este atalho!</div>
+                        </div>
+                    </div>
+                    <div class="keys-row">
+                        <kbd class="k-ctrl">Ctrl</kbd> <span class="sep-plus">+</span> <kbd>Espaço</kbd>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Sub-grupo: Navegação & Interface -->
+            <div class="sub-group-title">📂 Painéis, Arquivos & Terminal</div>
+            <div class="cards-layout">
+
+                <div class="shortcut-card" data-keywords="paleta comandos command palette f1 tudo configurar">
+                    <div class="card-header-line">
+                        <span class="action-emoji">🎛️</span>
+                        <div class="card-main-info">
+                            <div class="action-name">Paleta de Comandos Geral</div>
+                            <div class="action-explanation">O centro de controle do VS Code. Permite rodar qualquer comando, instalar temas ou extensões.</div>
+                            <div class="practical-use">⭐ <strong>Regra:</strong> Se você não sabe o atalho de algo, procure por aqui!</div>
+                        </div>
+                    </div>
+                    <div class="keys-row">
+                        <kbd class="k-ctrl">Ctrl</kbd> <span class="sep-plus">+</span> <kbd class="k-shift">Shift</kbd> <span class="sep-plus">+</span> <kbd>P</kbd> <span class="sep-or">ou</span> <kbd>F1</kbd>
+                    </div>
+                </div>
+
+                <div class="shortcut-card" data-keywords="abrir arquivo quick open procurar arquivo achar">
+                    <div class="card-header-line">
+                        <span class="action-emoji">⚡</span>
+                        <div class="card-main-info">
+                            <div class="action-name">Localizar e Abrir Arquivo Rápido</div>
+                            <div class="action-explanation">Encontre qualquer arquivo do projeto digitando partes do nome, sem abrir pastas.</div>
+                            <div class="practical-use">💡 <strong>No dia a dia:</strong> Digite <code>index</code> ou <code>style</code> e tecle Enter.</div>
+                        </div>
+                    </div>
+                    <div class="keys-row">
+                        <kbd class="k-ctrl">Ctrl</kbd> <span class="sep-plus">+</span> <kbd>P</kbd>
+                    </div>
+                </div>
+
+                <div class="shortcut-card" data-keywords="terminal integrado console powershell git bash prompt">
+                    <div class="card-header-line">
+                        <span class="action-emoji">💻</span>
+                        <div class="card-main-info">
+                            <div class="action-name">Abrir / Fechar Terminal Embutido</div>
+                            <div class="action-explanation">Exibe o terminal na parte inferior do editor para rodar <code>git</code>, <code>npm</code>, <code>python</code> ou <code>php</code>.</div>
+                            <div class="practical-use warning">⚠️ <strong>No ABNT2:</strong> Use <kbd class="k-ctrl">Ctrl</kbd> + <kbd>'</kbd> (aspas simples) ou <kbd class="k-ctrl">Ctrl</kbd> + <kbd>J</kbd>.</div>
+                        </div>
+                    </div>
+                    <div class="keys-row">
+                        <kbd class="k-ctrl">Ctrl</kbd> <span class="sep-plus">+</span> <kbd>'</kbd> <span class="sep-or">ou</span> <kbd class="k-ctrl">Ctrl</kbd> <span class="sep-plus">+</span> <kbd>J</kbd>
+                    </div>
+                </div>
+
+                <div class="shortcut-card" data-keywords="barra lateral sidebar explorer ocultar mostrar">
+                    <div class="card-header-line">
+                        <span class="action-emoji">📁</span>
+                        <div class="card-main-info">
+                            <div class="action-name">Mostrar / Ocultar Barra Lateral</div>
+                            <div class="action-explanation">Esconde a árvore de arquivos para liberar mais espaço de tela para o código.</div>
+                            <div class="practical-use">💡 <strong>No dia a dia:</strong> Ganhe foco total ao programar em telas menores.</div>
+                        </div>
+                    </div>
+                    <div class="keys-row">
+                        <kbd class="k-ctrl">Ctrl</kbd> <span class="sep-plus">+</span> <kbd>B</kbd>
+                    </div>
+                </div>
+
+                <div class="shortcut-card" data-keywords="dividir tela lado a lado duas colunas split editor">
+                    <div class="card-header-line">
+                        <span class="action-emoji">🪟</span>
+                        <div class="card-main-info">
+                            <div class="action-name">Dividir Tela em Colunas (Split)</div>
+                            <div class="action-explanation">Abre o código em duas colunas paralelas para visualizar o HTML e o CSS lado a lado.</div>
+                            <div class="practical-use">💡 <strong>No dia a dia:</strong> Edite seu código enquanto consulta outro arquivo sem alternar abas.</div>
+                        </div>
+                    </div>
+                    <div class="keys-row">
+                        <kbd class="k-ctrl">Ctrl</kbd> <span class="sep-plus">+</span> <kbd>\</kbd>
+                    </div>
+                </div>
+
+                <div class="shortcut-card" data-keywords="ir para linha numero jump line g">
+                    <div class="card-header-line">
+                        <span class="action-emoji">🎯</span>
+                        <div class="card-main-info">
+                            <div class="action-name">Pular Direto para a Linha</div>
+                            <div class="action-explanation">O console acusou erro na linha 145? Digite o número da linha e pule até ela instantaneamente.</div>
+                            <div class="practical-use">💡 <strong>No dia a dia:</strong> Aperte o atalho, digite o número e dê Enter.</div>
+                        </div>
+                    </div>
+                    <div class="keys-row">
+                        <kbd class="k-ctrl">Ctrl</kbd> <span class="sep-plus">+</span> <kbd>G</kbd>
+                    </div>
+                </div>
+
+                <div class="shortcut-card" data-keywords="salvar save arquivo">
+                    <div class="card-header-line">
+                        <span class="action-emoji">💾</span>
+                        <div class="card-main-info">
+                            <div class="action-name">Salvar Arquivo</div>
+                            <div class="action-explanation">Grava as alterações feitas no documento atual.</div>
+                            <div class="practical-use">💡 <strong>Dica Pro:</strong> Use <kbd class="k-ctrl">Ctrl</kbd>+<kbd>K</kbd> seguido de <kbd>S</kbd> para salvar todos os arquivos abertos de uma vez.</div>
+                        </div>
+                    </div>
+                    <div class="keys-row">
+                        <kbd class="k-ctrl">Ctrl</kbd> <span class="sep-plus">+</span> <kbd>S</kbd>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Estado de Busca Sem Resultados -->
+        <div class="no-results" id="noResultsBox">
+            <h3>🔍 Nenhum atalho encontrado</h3>
+            <p style="color:var(--text-muted); font-size:0.95rem;">Tente pesquisar por palavras como "copiar", "linha", "terminal", "abas" ou nomes de teclas.</p>
+        </div>
+
+        <footer>
+            <p>Criado com dedicação para a turma do Curso Técnico em Desenvolvimento de Sistemas 🚀</p>
+            <p style="margin-top: 0.4rem;">Dica dos professores: Pratique um atalho novo por dia até virar memória muscular!</p>
+            <div>
+                <button class="print-btn" onclick="window.print()">🖨️ Imprimir / Salvar como PDF (Cheat Sheet)</button>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- Script de Filtro, Tema e Caixa de Prática -->
+    <script>
+        // Alternância de Tema Claro / Escuro
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        const html = document.documentElement;
+
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            html.setAttribute('data-theme', newTheme);
+            themeIcon.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+            themeToggle.innerHTML = `${themeIcon.textContent} Modo ${newTheme === 'dark' ? 'Claro' : 'Escuro'}`;
+        });
+
+        // Caixa de Treinamento Prático
+        const practiceBox = document.getElementById('practiceBox');
+        const practiceFeedback = document.getElementById('practiceFeedback');
+
+        practiceBox.addEventListener('keydown', (e) => {
+            let keys = [];
+            if (e.ctrlKey) keys.push('Ctrl');
+            if (e.shiftKey) keys.push('Shift');
+            if (e.altKey) keys.push('Alt');
+            if (e.metaKey) keys.push('Win');
+            
+            if (['Control', 'Shift', 'Alt', 'Meta'].indexOf(e.key) === -1) {
+                keys.push(e.key.toUpperCase());
+            }
+
+            if (keys.length > 1) {
+                practiceFeedback.innerHTML = `✅ Você pressionou: <strong style="color:var(--text-title);">${keys.join(' + ')}</strong>`;
+            }
+        });
+
+        // Busca e Filtros
+        const searchInput = document.getElementById('searchInput');
+        const filterBtns = document.querySelectorAll('.btn-filter');
+        const sections = document.querySelectorAll('.section-container');
+        const noResultsBox = document.getElementById('noResultsBox');
+
+        let activeCategory = 'all';
+
+        function filterShortcuts() {
+            const query = searchInput.value.toLowerCase().trim();
+            let totalMatches = 0;
+
+            sections.forEach(section => {
+                const category = section.getAttribute('data-category');
+                const categoryMatch = (activeCategory === 'all' || activeCategory === category);
+                
+                let matchesInSection = 0;
+                const cards = section.querySelectorAll('.shortcut-card');
+                const subTitles = section.querySelectorAll('.sub-group-title');
+
+                cards.forEach(card => {
+                    const content = (card.innerText + ' ' + (card.getAttribute('data-keywords') || '')).toLowerCase();
+                    const textMatch = !query || content.includes(query);
+
+                    if (categoryMatch && textMatch) {
+                        card.style.display = 'flex';
+                        matchesInSection++;
+                        totalMatches++;
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+
+                // Se houver cards visíveis, exibe a seção e os subtítulos
+                if (matchesInSection > 0) {
+                    section.style.display = 'block';
+                    subTitles.forEach(st => st.style.display = 'flex');
+                } else {
+                    section.style.display = 'none';
+                }
+            });
+
+            noResultsBox.style.display = totalMatches === 0 ? 'block' : 'none';
+        }
+
+        searchInput.addEventListener('input', filterShortcuts);
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                activeCategory = btn.getAttribute('data-filter');
+                filterShortcuts();
+            });
+        });
+
+        // Atalho rápido: teclar '/' para focar na pesquisa
+        window.addEventListener('keydown', (e) => {
+            if (e.key === '/' && document.activeElement !== searchInput && document.activeElement !== practiceBox) {
+                e.preventDefault();
+                searchInput.focus();
+                searchInput.select();
+            }
+        });
+    </script>
+</body>
+</html>

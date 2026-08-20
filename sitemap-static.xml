@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+   <!-- Página Inicial / Landing Page Principal -->
+   <url>
+      <loc>https://oscarlima.com.br/</loc>
+      <lastmod>2026-08-13T15:30:00+00:00</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>1.0</priority>
+   </url>
+   <!-- Mapa de Projetos & Sitemap -->
+   <url>
+      <loc>https://oscarlima.com.br/projetos.html</loc>
+      <lastmod>2026-08-13T15:30:00+00:00</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.9</priority>
+   </url>
+   <!-- Estudos de Caso / Landing Pages de Portfólio -->
+   <url>
+      <loc>https://oscarlima.com.br/albuquerque-paulo.html</loc>
+      <lastmod>2026-05-28T16:50:00+00:00</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url>
+   <url>
+      <loc>https://oscarlima.com.br/calculadora-cdc.html</loc>
+      <lastmod>2026-05-28T16:50:00+00:00</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url>
+   <url>
+      <loc>https://oscarlima.com.br/gf-impermeabilizadora.html</loc>
+      <lastmod>2026-05-28T16:50:00+00:00</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url>
+   <url>
+      <loc>https://oscarlima.com.br/mar-instituto.html</loc>
+      <lastmod>2026-05-28T16:50:00+00:00</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url>
+   <url>
+      <loc>https://oscarlima.com.br/midia-tv-shop.html</loc>
+      <lastmod>2026-05-28T16:50:00+00:00</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url>
+   <url>
+      <loc>https://oscarlima.com.br/govagent.html</loc>
+      <lastmod>2026-06-19T16:20:00+00:00</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url>
+   <url>
+      <loc>https://oscarlima.com.br/teoria-jogos.html</loc>
+      <lastmod>2026-05-28T16:50:00+00:00</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url>
+</urlset>

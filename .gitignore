@@ -1,0 +1,23 @@
+# Arquivos de Configuração e Chaves de API (Segurança)
+config.php
+wp-config.php
+blog/wp-config.php
+api/
+
+# Dependências Node.js
+node_modules/
+youtube-extractor/node_modules/
+
+# Uploads de Mídia do WordPress (Imagens e Arquivos Pesados)
+blog/wp-content/uploads/
+blog/wp-content/ai1wm-backups/
+
+# Repositórios aninhados
+atalhos/.git/
+
+# Arquivos do Sistema Operacional e Temporários
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+Novo Documento de Texto.txt
