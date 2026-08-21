@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oscar Lima | Especialista WordPress & Desenvolvedor Front-end no Rio de Janeiro</title>
-    <meta name="description" content="Especialista em WordPress e Front-end de alta performance. Criação de sites estratégicos, SEO avançado e interfaces modernas para empresas no Rio de Janeiro e Niterói.">
+    <title>Oscar Lima | Criação de Sites Profissionais & Especialista WordPress</title>
+    <meta name="description" content="Criação e desenvolvimento de sites profissionais, landing pages e soluções WordPress sob medida para empresas no Rio de Janeiro, Niterói e todo o Brasil.">
     
     <!-- AI Search & SEO Optimization -->
     <meta name="author" content="Oscar Lima">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://oscarlima.com.br">
     
-    <!-- Open Graph for AI tools and Social Media -->
-    <meta property="og:title" content="Oscar Lima | Web Designer WordPress & Front-end">
-    <meta property="og:description" content="Desenvolvimento de sites de alta performance com WordPress e tecnologias modernas de front-end.">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Oscar Lima | Criação de Sites & Especialista WordPress">
+    <meta property="og:description" content="Desenvolvimento de sites profissionais, landing pages e soluções personalizadas em WordPress.">
     <meta property="og:url" content="https://oscarlima.com.br">
     <meta property="og:type" content="website">
 
@@ -22,7 +22,7 @@
     {
       "@context": "https://schema.org",
       "@type": "ProfessionalService",
-      "name": "Oscar Lima - Web Designer & Especialista WordPress",
+      "name": "Oscar Lima - Criação de Sites & Especialista WordPress",
       "image": "https://oscarlima.com.br/assets/oscarlima600x894.webp",
       "@id": "https://oscarlima.com.br",
       "url": "https://oscarlima.com.br",
@@ -42,10 +42,10 @@
         "@type": "State",
         "name": "Rio de Janeiro"
       },
-      "description": "Especialista em WordPress, SEO Local e desenvolvimento Front-end avançado com React e performance otimizada.",
+      "description": "Especialista em criação de sites profissionais, WordPress sob medida, SEO e desenvolvimento front-end moderno.",
       "offers": {
         "@type": "Offer",
-        "description": "Desenvolvimento de sites, landing pages e consultoria técnica WordPress."
+        "description": "Criação de sites, landing pages e consultoria WordPress."
       }
     }
     </script>
@@ -53,19 +53,19 @@
     <!-- Google Fonts Preconnect and Link -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap">
 
-    <!-- FontAwesome for Premium Icons (Asynchronous) -->
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+    <!-- FontAwesome for Premium Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Local Premium Stylesheet -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/cookie-consent.css">
+    <link rel="stylesheet" href="css/particles-integration.css">
 </head>
 <body>
 
-    <!-- Scroll Progress Bar -->
+    <!-- Scroll Progress Bar with Colorful Gradient -->
     <div id="scroll-progress" class="scroll-progress"></div>
 
     <!-- Background Blobs -->
@@ -74,24 +74,27 @@
         <div class="blob blob-2"></div>
     </div>
 
-    <!-- Header Navigation -->
+    <!-- Fixed 3D Particle Canvas Background -->
+    <div class="canvas-container">
+        <canvas id="hero-canvas"></canvas>
+    </div>
+
+    <!-- Header Navigation with Colorful Accents -->
     <header id="main-header">
         <div class="nav-container">
             <a href="#home" class="logo">
                 OSCAR LIMA<span class="logo-dot"></span>
             </a>
-            <ul class="nav-menu">
-                <li class="nav-item"><a href="#home" class="nav-link active">Início</a></li>
-                <li class="nav-item"><a href="#specialties" class="nav-link">Especialidades</a></li>
-                <li class="nav-item"><a href="#performance" class="nav-link">Performance</a></li>
-                <li class="nav-item"><a href="#portfolio" class="nav-link">Portfólio</a></li>
-                <li class="nav-item"><a href="projetos.html" class="nav-link">Projetos (Sitemap)</a></li>
-                <li class="nav-item"><a href="#testimonials" class="nav-link">Depoimentos</a></li>
-                <li class="nav-item"><a href="#faq" class="nav-link">FAQ</a></li>
-                <li class="nav-item"><a href="blog/" class="nav-link">Blog</a></li>
-                <li class="nav-item"><a href="#contact" class="nav-link">Contato</a></li>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item"><a href="#home" class="nav-link active"><span class="nav-dot cyan"></span>Início</a></li>
+                <li class="nav-item"><a href="#specialties" class="nav-link"><span class="nav-dot purple"></span>Serviços</a></li>
+                <li class="nav-item"><a href="#quality" class="nav-link"><span class="nav-dot green"></span>Diferenciais</a></li>
+                <li class="nav-item"><a href="#portfolio" class="nav-link"><span class="nav-dot blue"></span>Portfólio</a></li>
+                <li class="nav-item"><a href="#testimonials" class="nav-link"><span class="nav-dot yellow"></span>Depoimentos</a></li>
+                <li class="nav-item"><a href="#faq" class="nav-link"><span class="nav-dot magenta"></span>FAQ</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link nav-btn-highlight">Contato</a></li>
             </ul>
-            <button class="hamburger" aria-label="Menu de Navegação">
+            <button class="hamburger" aria-label="Menu de Navegação" aria-expanded="false" aria-controls="nav-menu">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -100,123 +103,141 @@
     </header>
 
     <!-- Hero Section -->
-    <section id="home" class="hero">
-        <canvas id="hero-canvas"></canvas>
+    <section id="home" class="hero hero-split">
         <div class="hero-content">
             <div class="hero-badge">
                 <span class="hero-badge-pulse"></span>
-                Disponível para Projetos Exclusivos
+                Criação de Sites Sob Medida • Niterói & Brasil
             </div>
-            <h1>Acelere sua Conversão com Sites de <span class="text-gradient">Performance Extrema</span></h1>
+            <h1>Sites Profissionais que <span class="text-gradient">Valorizam sua Marca</span> e Atraem Clientes</h1>
             <p class="lead" style="min-height: 3.2rem;">
-                Especialista em <span class="typewriter-text" style="color: var(--color-primary); font-weight: 600;" data-words='["WordPress Customizado", "Performance Extrema", "Front-end de Alta Performance", "SEO Técnico e Local"]'></span>.<br>
-                Sua marca no topo do Google com carregamento instantâneo.
+                Especialista em <span class="typewriter-text" style="color: var(--color-primary); font-weight: 600;" data-words='["Criação de Sites", "WordPress Sob Medida", "Landing Pages", "Front-end Moderno", "SEO e Presença Digital"]'></span>.<br>
+                Estrutura completa, design moderno e facilidade para gerenciar.
             </p>
             <div class="hero-cta">
                 <a href="#contact" class="btn btn-primary">
-                    <i class="fa-solid fa-rocket"></i> Quero meu site agora
+                    <i class="fa-brands fa-whatsapp"></i> Iniciar Meu Projeto
                 </a>
                 <button id="cta-ai-chat" class="btn btn-secondary" onclick="document.getElementById('chatbot-trigger').click();">
-                    <i class="fa-solid fa-comments"></i> Conversar com a IA
+                    <i class="fa-solid fa-comments"></i> Tirar Dúvidas com a IA
                 </button>
             </div>
+            
+            <!-- Interactive 3D State Controller Tech-Pills -->
+            <div class="hero-tech-pills" role="tablist" aria-label="Controle de Transição 3D">
+                <button type="button" class="tech-pill active" data-state="0" role="tab" aria-selected="true" aria-label="Alternar para Ondas de Rede">
+                    <span class="pill-dot green"></span> ONDAS DE REDE
+                </button>
+                <button type="button" class="tech-pill" data-state="1" role="tab" aria-selected="false" aria-label="Alternar para Fluxo Matrix">
+                    <span class="pill-dot purple"></span> FLUXO MATRIX
+                </button>
+                <button type="button" class="tech-pill" data-state="2" role="tab" aria-selected="false" aria-label="Alternar para Consciência 3D">
+                    <span class="pill-dot cyan"></span> CONSCIÊNCIA 3D
+                </button>
+            </div>
+        </div>
+
+        <!-- Right Side Spatial Anchor for 3D Particle Entity -->
+        <div class="hero-particle-indicator">
+            <div class="hud-tag">ARQUITETURA DIGITAL // 3D ENTITY</div>
+            <div class="hud-coords" id="coord-readout">X: 0.0° | Y: 0.0° | STATE: NETWORK_SIGNAL_WAVES</div>
         </div>
     </section>
 
     <!-- Specialties Section -->
     <section id="specialties" class="section-padding reveal">
         <div class="section-header">
-            <h2>Especialidades Técnicas</h2>
-            <p>Conectando desenvolvimento web de alta performance com as melhores práticas de SEO e conversão.</p>
+            <h2>Serviços e Especialidades</h2>
+            <p>Conectando design moderno, código limpo e as melhores práticas para valorizar a presença digital da sua marca.</p>
         </div>
         <div class="spec-grid">
             <!-- Specialty 1 -->
             <div class="glass-panel spec-card">
-                <div class="spec-icon">
+                <div class="spec-icon color-wordpress">
                     <i class="fa-brands fa-wordpress"></i>
                 </div>
-                <h3>WordPress Customizado</h3>
-                <p>Desenvolvimento nativo, limpo e modular. Livre de plugins pesados e construtores inchados que arrastam o carregamento do seu site.</p>
+                <h3>WordPress Sob Medida</h3>
+                <p>Desenvolvimento limpo, modular e fácil de gerenciar. Um painel intuitivo para você atualizar seus textos e imagens com total autonomia.</p>
             </div>
             <!-- Specialty 2 -->
             <div class="glass-panel spec-card">
-                <div class="spec-icon">
+                <div class="spec-icon color-frontend">
                     <i class="fa-solid fa-code"></i>
                 </div>
-                <h3>Front-end Sob Medida</h3>
-                <p>Interfaces fluidas, semânticas e extremamente rápidas construídas com código limpo na mão (HTML5, CSS3 e JS puro), garantindo performance extrema de carregamento.</p>
+                <h3>Front-end Moderno</h3>
+                <p>Interfaces modernas e adaptadas para qualquer dispositivo (celulares, tablets e computadores), garantindo uma experiência agradável aos seus clientes.</p>
             </div>
             <!-- Specialty 3 -->
             <div class="glass-panel spec-card">
-                <div class="spec-icon">
+                <div class="spec-icon color-seo">
                     <i class="fa-solid fa-magnifying-glass-chart"></i>
                 </div>
-                <h3>SEO Estratégico</h3>
-                <p>Configuração técnica avançada focada em intenção de busca para ranqueamento local e nacional, aumentando a visibilidade e autoridade da sua marca.</p>
+                <h3>SEO & Presença no Google</h3>
+                <p>Estruturação técnica focada nas diretrizes do Google para que sua empresa seja encontrada facilmente por pessoas que buscam pelos seus serviços.</p>
             </div>
             <!-- Specialty 4 -->
             <div class="glass-panel spec-card">
-                <div class="spec-icon">
+                <div class="spec-icon color-ai">
                     <i class="fa-solid fa-brain"></i>
                 </div>
-                <h3>Web Design com IA</h3>
-                <p>União estratégica de anos de experiência com o suporte inteligente da Inteligência Artificial para gerar layouts otimizados e focados em vendas.</p>
+                <h3>Web Design & Estratégia</h3>
+                <p>Planejamento visual e arquitetura de conteúdo focados em transmitir profissionalismo, credibilidade e facilitar o contato do cliente.</p>
             </div>
         </div>
     </section>
 
-    <!-- Performance Simulator Section -->
-    <section id="performance" class="section-padding reveal">
+    <!-- Quality Comparison Section -->
+    <section id="quality" class="section-padding reveal">
         <div class="section-header">
-            <h2>Performance Não é Opcional</h2>
-            <p>Um segundo de atraso pode custar 7% de conversão. Veja a diferença de um site otimizado profissionalmente.</p>
+            <h2>Por Que Investir em um Site Profissional?</h2>
+            <p>O cuidado com o design e a estrutura do seu site reflete diretamente na confiança que seus clientes têm na sua empresa.</p>
         </div>
         <div class="perf-simulator">
-            <!-- Slow Site -->
+            <!-- Generic Site -->
             <div class="glass-panel perf-card perf-slow">
                 <div>
                     <span class="hero-badge" style="background: rgba(239, 68, 68, 0.08); border-color: rgba(239, 68, 68, 0.2); color: var(--color-danger)">
-                        Sites Comuns no Mercado
+                        Sites Genéricos ou Amadores
                     </span>
-                    <h3 style="margin-top: 15px;">Desenvolvimento Genérico</h3>
+                    <h3 style="margin-top: 15px;">Modelos Prontos sem Suporte</h3>
                     <p style="color: var(--color-text-muted); font-size: 0.95rem; margin-top: 10px;">
-                        Sites feitos com temas prontos, excesso de plugins não otimizados e construtores de arrastar e soltar inchados.
+                        Templates genéricos sem suporte adequado, difíceis de atualizar e que não transmitem autoridade para sua marca.
                     </p>
                 </div>
                 <div class="perf-gauge">
                     <div class="gauge-circle">
-                        <span class="gauge-value">43</span>
+                        <span class="gauge-value"><i class="fa-solid fa-triangle-exclamation" style="font-size: 1.6rem; color: var(--color-danger);"></i></span>
                     </div>
-                    <span style="color: var(--color-danger); font-weight: 600; margin-top: 15px;">Velocidade Lenta</span>
+                    <span style="color: var(--color-danger); font-weight: 600; margin-top: 15px;">Estrutura Frágil</span>
                 </div>
                 <ul class="perf-stats">
-                    <li><span>Tempo de Carregamento:</span><span style="color: var(--color-danger)">3.8s</span></li>
-                    <li><span>Tamanho da Página:</span><span>4.2 MB</span></li>
-                    <li><span>Taxa de Rejeição:</span><span style="color: var(--color-danger)">+75%</span></li>
+                    <li><span>Design:</span><span style="color: var(--color-danger)">Genérico / Cópia</span></li>
+                    <li><span>Atualizações:</span><span style="color: var(--color-danger)">Complexas</span></li>
+                    <li><span>Suporte:</span><span style="color: var(--color-danger)">Ausente</span></li>
                 </ul>
             </div>
 
-            <!-- Fast Site (Oscar Lima) -->
+            <!-- Custom Site (Oscar Lima) -->
             <div class="glass-panel perf-card perf-fast">
                 <div>
                     <span class="hero-badge" style="background: rgba(16, 185, 129, 0.08); border-color: rgba(16, 185, 129, 0.2); color: var(--color-success)">
-                        Estilo Oscar Lima
+                        Desenvolvido com Oscar Lima
                     </span>
-                    <h3 style="margin-top: 15px;">Código High-End & Nativo</h3>
+                    <h3 style="margin-top: 15px;">Projeto Sob Medida & Exclusivo</h3>
                     <p style="color: var(--color-text-muted); font-size: 0.95rem; margin-top: 10px;">
-                        Desenvolvimento otimizado à mão, servidor bem configurado, imagens compactadas e carregamento assíncrono inteligente.
+                        Design personalizado, painel próprio e fácil de usar, total suporte técnico e adaptação completa para dispositivos móveis.
                     </p>
                 </div>
                 <div class="perf-gauge">
                     <div class="gauge-circle">
-                        <span class="gauge-value">100</span>
+                        <span class="gauge-value"><i class="fa-solid fa-check" style="font-size: 2rem; color: var(--color-success);"></i></span>
                     </div>
-                    <span style="color: var(--color-success); font-weight: 600; margin-top: 15px;">Velocidade Máxima</span>
+                    <span style="color: var(--color-success); font-weight: 600; margin-top: 15px;">Padrão Profissional</span>
                 </div>
                 <ul class="perf-stats">
-                    <li><span>Tempo de Carregamento:</span><span style="color: var(--color-success)">&lt; 0.8s</span></li>
-                    <li><span>Tamanho da Página:</span><span>0.8 MB</span></li>
-                    <li><span>Taxa de Rejeição:</span><span style="color: var(--color-success)">&lt; 15%</span></li>
+                    <li><span>Design:</span><span style="color: var(--color-success)">Exclusivo e Moderno</span></li>
+                    <li><span>Painel de Controle:</span><span style="color: var(--color-success)">Simples e Intuitivo</span></li>
+                    <li><span>Suporte:</span><span style="color: var(--color-success)">Direto e Dedicado</span></li>
                 </ul>
             </div>
         </div>
@@ -235,11 +256,11 @@
             </div>
             <div class="stat-item">
                 <h3 class="stat-number" data-target="100" data-suffix="%">0</h3>
-                <p>Satisfação de Clientes</p>
+                <p>Suporte e Dedicação</p>
             </div>
             <div class="stat-item">
-                <h3 class="stat-number" data-target="800" data-suffix="ms">0</h3>
-                <p>Carregamento Médio</p>
+                <h3 class="stat-number" data-target="100" data-suffix="%">0</h3>
+                <p>Design Responsivo</p>
             </div>
         </div>
     </section>
@@ -247,8 +268,8 @@
     <!-- Portfolio Section -->
     <section id="portfolio" class="section-padding reveal">
         <div class="section-header">
-            <h2>Cases de Sucesso</h2>
-            <p>Sites leves, rápidos e refinados desenvolvidos para empresas reais que buscam resultados reais.</p>
+            <h2>Projetos e Portfólio</h2>
+            <p>Sites institucionais, landing pages e plataformas desenvolvidas para empresas e clientes reais.</p>
         </div>
         <div class="portfolio-filters">
             <button class="filter-btn active" data-filter="all">Todos</button>
@@ -268,7 +289,7 @@
                         <span class="project-tag">Simulador</span>
                     </div>
                     <h3>O Custo da Limpeza</h3>
-                    <p>Simulador estratégico de crise de Estado e tomadas de decisão sob o dilema da segurança pública e corrupção sistêmica.</p>
+                    <p>Simulador estratégico de tomada de decisões sob o dilema da segurança pública e administração institucional.</p>
                     <a href="teoria-jogos.html" class="project-link">
                         Ver detalhes <i class="fa-solid fa-arrow-right"></i>
                     </a>
@@ -281,13 +302,12 @@
                 </div>
                 <div class="project-info">
                     <div class="project-tags">
-                        <span class="project-tag">Next.js 16</span>
+                        <span class="project-tag">Next.js</span>
                         <span class="project-tag">Supabase</span>
                         <span class="project-tag">Cloudflare</span>
-                        <span class="project-tag">Simulador</span>
                     </div>
                     <h3>GovAgent</h3>
-                    <p>Simulador estratégico de tomada de decisões no estilo Reigns, integrado ao Supabase para persistência e implantado na Cloudflare Pages.</p>
+                    <p>Simulador estratégico de tomadas de decisão integrado ao Supabase para persistência de dados de usuários.</p>
                     <a href="govagent.html" class="project-link">
                         Ver detalhes <i class="fa-solid fa-arrow-right"></i>
                     </a>
@@ -302,10 +322,9 @@
                     <div class="project-tags">
                         <span class="project-tag">Frontend / PHP</span>
                         <span class="project-tag">Finanças</span>
-                        <span class="project-tag">Simulador</span>
                     </div>
                     <h3>Calculadora de Juros Abusivos CDC</h3>
-                    <p>Plataforma avançada de auditoria de financiamentos e repactuação de dívidas sob a Lei do Superendividamento, contendo 5 abas integradas, gráficos dinâmicos e exportação de relatórios cíveis.</p>
+                    <p>Plataforma de auditoria de financiamentos contendo 5 abas integradas, gráficos dinâmicos e exportação de relatórios.</p>
                     <a href="calculadora-cdc.html" class="project-link">
                         Ver detalhes <i class="fa-solid fa-arrow-right"></i>
                     </a>
@@ -319,11 +338,11 @@
                 <div class="project-info">
                     <div class="project-tags">
                         <span class="project-tag">WordPress</span>
-                        <span class="project-tag">Painel Nativo</span>
+                        <span class="project-tag">Painel Sob Medida</span>
                         <span class="project-tag">SEO Local</span>
                     </div>
                     <h3>GF Impermeabilizadora</h3>
-                    <p>Landing page e portal corporativo otimizado para SEO local e velocidade, garantindo alta captação de leads em Niterói/RJ.</p>
+                    <p>Landing page e portal corporativo desenvolvido para captação de clientes em Niterói e Rio de Janeiro.</p>
                     <a href="gf-impermeabilizadora.html" class="project-link">
                         Ver detalhes <i class="fa-solid fa-arrow-right"></i>
                     </a>
@@ -338,10 +357,10 @@
                     <div class="project-tags">
                         <span class="project-tag">OnePage</span>
                         <span class="project-tag">WordPress</span>
-                        <span class="project-tag">Clean Design</span>
+                        <span class="project-tag">Design Limpo</span>
                     </div>
                     <h3>Albuquerque Paulo Advogados</h3>
-                    <p>Site institucional no formato OnePage desenvolvido sob medida em WordPress nativo. Clean, rápido e de alta conversão.</p>
+                    <p>Site institucional no formato OnePage desenvolvido sob medida em WordPress nativo. Elegante, direto e profissional.</p>
                     <a href="albuquerque-paulo.html" class="project-link">
                         Ver detalhes <i class="fa-solid fa-arrow-right"></i>
                     </a>
@@ -356,10 +375,10 @@
                     <div class="project-tags">
                         <span class="project-tag">WordPress</span>
                         <span class="project-tag">WooCommerce</span>
-                        <span class="project-tag">E-commerce</span>
+                        <span class="project-tag">Catálogo</span>
                     </div>
                     <h3>Mídia TV Shop</h3>
-                    <p>Catálogo e e-commerce de alta performance, projetado com foco absoluto na experiência mobile e em velocidade de checkout.</p>
+                    <p>Catálogo e e-commerce projetado com foco na navegação facilitada e ótima experiência em celulares.</p>
                     <a href="midia-tv-shop.html" class="project-link">
                         Ver detalhes <i class="fa-solid fa-arrow-right"></i>
                     </a>
@@ -372,12 +391,12 @@
                 </div>
                 <div class="project-info">
                     <div class="project-tags">
-                        <span class="project-tag">WordPress Customizado</span>
-                        <span class="project-tag">Advocacia / Jurídico</span>
-                        <span class="project-tag">Portal de Notícias</span>
+                        <span class="project-tag">WordPress</span>
+                        <span class="project-tag">Portal Institucional</span>
+                        <span class="project-tag">Área de Notícias</span>
                     </div>
                     <h3>M.A.R. Instituto</h3>
-                    <p>Plataforma institucional para o Movimento da Advocacia Renovada. Desenvolvimento de tema WordPress filho totalmente customizado (Astra child theme), com área de notícias integrada e alta performance.</p>
+                    <p>Plataforma institucional para o Movimento da Advocacia Renovada com área de notícias integrada e design sob medida.</p>
                     <a href="mar-instituto.html" class="project-link">
                         Ver detalhes <i class="fa-solid fa-arrow-right"></i>
                     </a>
@@ -390,7 +409,7 @@
     <section id="testimonials" class="section-padding reveal">
         <div class="section-header">
             <h2>O Que Dizem Nossos Clientes</h2>
-            <p>Parcerias de sucesso baseadas em transparência, dedicação e resultados fora da curva.</p>
+            <p>Parcerias de confiança baseadas em dedicação, clareza e entregas com excelência.</p>
         </div>
         <div class="testimonials-grid">
             <!-- Testimonial 1 -->
@@ -399,7 +418,7 @@
                     <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                 </div>
                 <p class="testimonial-quote">
-                    "O Oscar é um profissional fora de série, que me surpreendeu pelo profissionalismo. Sem dúvidas nenhuma eu o recomendo."
+                    "O Oscar é um profissional excelente, que me surpreendeu pela dedicação e qualidade. Sem dúvidas eu o recomendo."
                 </p>
                 <div class="testimonial-author">
                     <div class="author-avatar">AP</div>
@@ -415,7 +434,7 @@
                     <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                 </div>
                 <p class="testimonial-quote">
-                    "Oscar é um dos melhores freelancers com quem trabalhei! Conhece muito, é dedicado, rápido e a entrega é superior a contratação."
+                    "Um dos melhores profissionais com quem já trabalhei! Atencioso, cumpre os prazos e entrega um resultado impecável."
                 </p>
                 <div class="testimonial-author">
                     <div class="author-avatar">M</div>
@@ -431,7 +450,7 @@
                     <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                 </div>
                 <p class="testimonial-quote">
-                    "Excelente trabalho, recomendo muito, ele foi super detalhista em todo o projeto, atuou de forma transparente e responsável."
+                    "Excelente trabalho, recomendo muito. Ele foi super detalhista em todo o projeto, atuando de forma transparente e responsável."
                 </p>
                 <div class="testimonial-author">
                     <div class="author-avatar">GF</div>
@@ -448,42 +467,42 @@
     <section id="faq" class="section-padding reveal">
         <div class="section-header">
             <h2>Perguntas Frequentes</h2>
-            <p>Tire suas dúvidas técnicas de forma transparente e objetiva.</p>
+            <p>Tire suas dúvidas sobre o processo de criação de sites de forma simples e direta.</p>
         </div>
         <div class="faq-accordion">
             <!-- FAQ 1 -->
             <div class="faq-item">
                 <button class="faq-question">
-                    <h3>Como funciona o desenvolvimento WordPress nativo?</h3>
+                    <h3>Como funciona a criação de um site em WordPress sob medida?</h3>
                     <div class="faq-toggle"><i class="fa-solid fa-plus"></i></div>
                 </button>
                 <div class="faq-answer">
                     <p>
-                        Eu crio o tema e os blocos de funcionalidades do zero, programando nativamente em PHP, JavaScript e CSS. Isso garante que seu site não utilize construtores lentos como Elementor nem precise de dezenas de plugins de terceiros, garantindo segurança e alta velocidade.
+                        Eu planejo e desenvolvo a estrutura do seu site personalizada para o seu negócio. Você recebe um painel fácil de usar, onde pode alterar textos, trocar fotos e gerenciar suas páginas de forma independente sempre que quiser.
                     </p>
                 </div>
             </div>
             <!-- FAQ 2 -->
             <div class="faq-item">
                 <button class="faq-question">
-                    <h3>Meu site atual é lento. Você consegue otimizar?</h3>
+                    <h3>O site vai funcionar perfeitamente em celulares?</h3>
                     <div class="faq-toggle"><i class="fa-solid fa-plus"></i></div>
                 </button>
                 <div class="faq-answer">
                     <p>
-                        Sim! Realizo uma análise profunda do código, otimização de imagens, auditoria de plugins pesados e reconfiguração de hospedagem e cache. Em muitos casos, reconstruir seções pesadas em código limpo garante notas acima de 95 no Google PageSpeed Insights.
+                        Com certeza! Todos os sites são 100% responsivos, adaptando-se automaticamente a telas de smartphones, tablets, notebooks e computadores desktop para oferecer a melhor experiência ao visitante.
                     </p>
                 </div>
             </div>
             <!-- FAQ 3 -->
             <div class="faq-item">
                 <button class="faq-question">
-                    <h3>Você faz integração com sistemas externos?</h3>
+                    <h3>Você ajuda com domínio, hospedagem e e-mails profissionais?</h3>
                     <div class="faq-toggle"><i class="fa-solid fa-plus"></i></div>
                 </button>
                 <div class="faq-answer">
                     <p>
-                        Sim, como Desenvolvedor Front-end e Especialista WordPress, posso conectar seu site ou landing page a CRMs (RD Station, Hubspot, ActiveCampaign), gateways de pagamento, APIs personalizadas e sistemas de automação de vendas.
+                        Sim! Auxilio em todo o processo de registro de domínio (.com.br ou .com), configuração do servidor de hospedagem, criação dos e-mails da sua empresa e publicação final do site.
                     </p>
                 </div>
             </div>
@@ -494,12 +513,12 @@
     <section id="contact" class="section-padding reveal">
         <div class="section-header">
             <h2>Vamos Tirar Seu Projeto do Papel?</h2>
-            <p>Entre em contato para solicitar uma estimativa ou tirar dúvidas sobre o seu projeto.</p>
+            <p>Entre em contato para solicitar uma proposta personalizada para a criação do site da sua empresa.</p>
         </div>
         <div class="glass-panel contact-layout">
             <div class="contact-info-panel">
                 <h3>Informações de Contato</h3>
-                <p>Estou sediado em Niterói/RJ, com atendimento 100% digital e pronto para atender empresas de todo o Brasil.</p>
+                <p>Atendimento digital personalizado para empresas e profissionais de todo o Brasil.</p>
                 
                 <div class="contact-details">
                     <div class="contact-item">
@@ -538,25 +557,25 @@
                 </div>
                 <div class="form-group">
                     <select id="form-service" class="form-input" required style="padding-right: 30px;">
-                        <option value="" disabled selected hidden>Qual o serviço?</option>
-                        <option value="WordPress Customizado">WordPress Customizado (Nativo)</option>
-                        <option value="Front-end / React Web App">Front-end / React Web App</option>
-                        <option value="Otimização de Performance e SEO">Otimização de Performance e SEO</option>
-                        <option value="Landing Page de Alta Conversão">Landing Page de Alta Conversão</option>
+                        <option value="" disabled selected hidden>Qual o serviço desejado?</option>
+                        <option value="Criação de Site Institucional">Criação de Site Institucional</option>
+                        <option value="Landing Page de Alta Conversão">Landing Page para Vendas / Serviços</option>
+                        <option value="WordPress Personalizado">Site em WordPress Sob Medida</option>
+                        <option value="Reformulação de Site Atual">Reformulação de Site Atual</option>
                     </select>
                 </div>
                 <div class="form-group">
                     <textarea id="form-message" class="form-input" placeholder=" " required></textarea>
-                    <label for="form-message" class="form-label">Descrição Breve do Projeto</label>
+                    <label for="form-message" class="form-label">Conte um pouco sobre o que precisa</label>
                 </div>
                 <button type="submit" class="btn btn-primary" style="align-self: flex-start; margin-top: 10px;">
-                    <i class="fa-brands fa-whatsapp"></i> Iniciar Contato via WhatsApp
+                    <i class="fa-brands fa-whatsapp"></i> Falar com Oscar Lima no WhatsApp
                 </button>
             </form>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Solid Footer (Definitive Bottom End of Website) -->
     <footer>
         <div class="footer-content">
             <div class="footer-socials">
@@ -566,12 +585,12 @@
                 <a href="mailto:contato@oscarlima.com.br" class="footer-social-link" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
             </div>
             <p class="footer-copyright">
-                &copy; 2026 Oscar Lima - Especialista WordPress & Desenvolvedor Front-end. Niterói, RJ. Todos os direitos reservados.
+                &copy; 2026 Oscar Lima - Criação de Sites Profissionais & Especialista WordPress. Niterói, RJ. Todos os direitos reservados.
             </p>
         </div>
     </footer>
 
-    <!-- Chatbot Floating UI -->
+    <!-- Chatbot Floating UI (Positioned Cleanly on Bottom-Right) -->
     <button id="chatbot-trigger" class="chatbot-trigger" aria-label="Abrir Chat Inteligente">
         <i class="fa-solid fa-brain" style="font-size: 1.5rem;"></i>
     </button>
@@ -589,15 +608,15 @@
         </div>
         <div id="chatbot-messages" class="chatbot-messages">
             <div class="chat-bubble bot">
-                Olá! Sou a Inteligência Artificial do Oscar Lima. 
-                Estou aqui para tirar suas dúvidas sobre criação de sites, estimativa de prazos ou otimização de velocidade de forma direta e sem termos técnicos complexos. 
-                O que você deseja construir para o seu negócio?
+                Olá! Sou o assistente virtual do Oscar Lima. 
+                Estou aqui para tirar suas dúvidas sobre criação de sites, prazos e soluções para o seu negócio de forma direta e prática. 
+                Como posso te ajudar hoje?
             </div>
         </div>
         <div class="chatbot-suggestions">
             <button class="suggestion-btn">Quero um orçamento</button>
-            <button class="suggestion-btn">Otimizar velocidade</button>
-            <button class="suggestion-btn">WordPress ou React?</button>
+            <button class="suggestion-btn">Como funciona o WordPress?</button>
+            <button class="suggestion-btn">Quanto tempo leva?</button>
         </div>
         <div class="chatbot-input-area">
             <input type="text" id="chatbot-input" class="chatbot-input" placeholder="Digite sua mensagem...">
@@ -605,8 +624,12 @@
         </div>
     </div>
 
-    <!-- Local Premium JavaScript (Deferred) -->
-    <script src="js/main.js" defer></script>
-    <script src="js/cookie-consent.js" defer></script>
+    <!-- 3D Particle Data & Engine Scripts -->
+    <script src="neo_data.js"></script>
+    <script src="app.js"></script>
+
+    <!-- Oscar Lima Portfolio Interactive JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/cookie-consent.js"></script>
 </body>
 </html>
