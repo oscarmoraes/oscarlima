@@ -148,7 +148,7 @@ class InteractiveHeroParticleEngine {
 
   switchState(targetStateIndex) {
     if (this.morphState === targetStateIndex && !this.isTransitioning) {
-      this.stateTimer = 0; // Reset hold duration on click
+      this.stateTimer = 0;
       return;
     }
 
@@ -267,9 +267,21 @@ class InteractiveHeroParticleEngine {
     return `${r}, ${g}, ${b}`;
   }
 
+  getRawFacePoints() {
+    if (typeof window !== 'undefined' && window.NEO_FACE_POINTS && Array.isArray(window.NEO_FACE_POINTS) && window.NEO_FACE_POINTS.length > 0) {
+      return window.NEO_FACE_POINTS;
+    }
+    if (typeof NEO_FACE_POINTS !== 'undefined' && Array.isArray(NEO_FACE_POINTS) && NEO_FACE_POINTS.length > 0) {
+      return NEO_FACE_POINTS;
+    }
+    return [];
+  }
+
   buildParticles() {
-    const rawFacePoints = (typeof NEO_FACE_POINTS !== 'undefined') ? NEO_FACE_POINTS : [];
+    const rawFacePoints = this.getRawFacePoints();
     const count = rawFacePoints.length;
+
+    if (count === 0) return;
 
     this.particles = [];
     const rainCols = this.streamCols;
@@ -405,6 +417,11 @@ class InteractiveHeroParticleEngine {
 
   update(dt) {
     this.time += dt;
+
+    // Retry building particles if neo_data was asynchronously parsed
+    if (this.particles.length === 0) {
+      this.buildParticles();
+    }
 
     // 1. Scroll Tracking with Immediate Two-Way Visibility
     const prevSmoothScroll = this.smoothScrollY;
