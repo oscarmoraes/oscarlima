@@ -1,67 +1,60 @@
-# 🚀 Oscar Lima | Especialista WordPress & Desenvolvedor Front-end
+# Oscar Lima | Criação de Sites Profissionais & Front-end Moderno
 
-Este repositório contém o código-fonte do website oficial e portfólio profissional de **Oscar Lima**, especializado em criação de sites estratégicos de alta performance, SEO avançado, arquitetura WordPress e interfaces web modernas.
+Portfólio oficial e apresentação profissional de **Oscar Lima** — Desenvolvedor Front-end e Especialista em Criação de Sites Estratégicos, Landing Pages de Alta Conversão e Soluções Web de Alta Performance.
 
----
-
-## 🌐 Acesso ao Site Oficial
-
-> ### 🔗 **[https://oscarlima.com.br](https://oscarlima.com.br)**
-> *O site em produção original com todas as integrações, otimizações de cache, SSL e serviços ativos está disponível no domínio oficial acima.*
+🌐 **Acesse o site oficial:** [https://oscarlima.com.br](https://oscarlima.com.br)
 
 ---
 
-## 📂 Estrutura do Projeto
+## 🎯 Sobre
 
-- **`index.html`** — Página principal do portfólio institucional com apresentação de serviços, diferenciais, depoimentos e formulários.
-- **`projetos.html`** — Catálogo detalhado de projetos e cases de sucesso desenvolvidos.
-- **Estudos de Caso & Páginas de Cases:**
-  - `albuquerque-paulo.html`
-  - `gf-impermeabilizadora.html`
-  - `mar-instituto.html`
-  - `midia-tv-shop.html`
-  - `govagent.html`
-  - `teoria-jogos.html`
-- **Ferramentas & Utilitários:**
-  - `calculadora-cdc.html` — Calculadora interativa de Crédito Direto ao Consumidor.
-  - `atalhos/` — Guia didático de atalhos de teclado (ABNT2 & VS Code).
-  - `youtube-extractor/` — Módulo utilitário para extração de dados e mídias do YouTube.
-- **`api/`** — Endpoints para chat inteligente e integração com IA.
-- **`css/` & `js/`** — Folhas de estilo modularizadas e scripts interativos otimizados para carregamento rápido.
-- **`blog/`** — Estrutura e integração com WordPress para publicações e artigos técnicos.
+Com foco em design refinado, carregamento instantâneo e código limpo, desenvolvo projetos sob medida para empresas, escritórios e profissionais liberais que buscam consolidar autoridade digital e transformar visitantes em clientes reais.
+
+- 📍 **Localização:** Niterói / Rio de Janeiro — Atendimento para todo o Brasil.
+- ⚡ **Compromisso:** 100% responsivo, otimizado para celulares e em conformidade com as melhores práticas de SEO do Google.
+- 🔒 **Segurança & Nuvem:** Soluções integradas com Cloudflare, Google Cloud Platform (reCAPTCHA) e arquitetura serverless.
 
 ---
 
-## 🛠️ Tecnologias Utilizadas
+## 💼 Especialidades & Serviços
 
-- **Front-end:** HTML5 Semântico, CSS3 Moderno (Custom Properties, Flexbox, CSS Grid), JavaScript Vanilla (ES6+).
-- **SEO & Performance:** Otimização para motores de busca tradicionais e motores de resposta por IA (Schema.org / JSON-LD, Open Graph, tags canônicas).
-- **Back-end & CMS:** PHP, WordPress, Apache / .htaccess.
-- **Integrações:** OpenAI API (Assistente inteligente integrado).
-
----
-
-## 💻 Como Executar Localmente
-
-1. Clone este repositório:
-   ```bash
-   git clone https://github.com/oscarmoraes/oscarlima.git
-   ```
-2. Coloque a pasta do projeto no diretório raiz do seu servidor local (ex: `xampp/htdocs/oscarlima`).
-3. Inicie os módulos **Apache** e **MySQL** pelo painel do XAMPP.
-4. Acesse pelo navegador:
-   ```text
-   http://localhost/oscarlima/
-   ```
+* **Sites Institucionais Sob Medida:** Arquitetura visual exclusiva, navegação intuitiva e transmissão de autoridade corporativa.
+* **Landing Pages de Alta Conversão:** Estrutura pensada para geração de leads qualificados e vendas diretas com integração instantânea ao WhatsApp.
+* **WordPress Personalizado:** Painéis intuitivos e modulares, permitindo autonomia total para o cliente atualizar conteúdos sem códigos complexos.
+* **SEO & Presença no Google:** Otimização técnica on-page, dados estruturados Schema.org / JSON-LD e pontuações máximas no Google PageSpeed Insights.
+* **Front-end & Ferramentas Interativas:** Aplicações web modernas desenvolvidas em JavaScript (ES6+), simuladores estratégicos e dashboards dinâmicos.
 
 ---
 
-## 📬 Contato
+## 📂 Cases de Sucesso & Projetos em Destaque
 
-- **Website:** [https://oscarlima.com.br](https://oscarlima.com.br)
-- **Localização:** Rio de Janeiro / Niterói - RJ, Brasil
-- **WhatsApp:** [+55 (21) 99106-1796](https://wa.me/5521991061796)
+* **[Mega Relógios](https://oscarlima.com.br/mega-relogios.html):** Configuração de segurança e migração para Google Cloud Platform com proteção total anti-bot.
+* **[Identifick](https://oscarlima.com.br/identifick.html):** Blindagem de canais comerciais de proposta e validação de leads empresariais.
+* **[Sollus Tecnologia](https://oscarlima.com.br/sollus-tecnologia.html):** Proteção em nuvem de formulários corporativos multirregionais (RJ, SP, ES, PR).
+* **[Albuquerque Paulo Advogados](https://oscarlima.com.br/albuquerque-paulo.html):** Reengenharia de performance com substituição de sliders pesados por código nativo ultra veloz (LCP < 1.0s).
+* **[GF Impermeabilizadora](https://oscarlima.com.br/gf-impermeabilizadora.html):** Landing page focada em captação de leads qualificados para construção civil.
+* **[M.A.R. Instituto](https://oscarlima.com.br/mar-instituto.html):** Portal jurídico de notícias otimizado para velocidade extrema no mobile.
+* **[Calculadora de Juros Abusivos CDC](https://oscarlima.com.br/calculadora-cdc.html):** Ferramenta web interativa para auditoria financeira com geração dinâmica de relatórios periciais em PDF.
+* **[O Custo da Limpeza](https://oscarlima.com.br/teoria-jogos.html):** Simulador interativo aplicando Teoria dos Jogos e tomadas de decisão estratégicas.
 
 ---
 
-© Oscar Lima. Todos os direitos reservados.
+## 🛠️ Competências & Tecnologias
+
+* **Linguagens & Tecnologias:** HTML5 Semântico, CSS3 Moderno (Grid / Flexbox), JavaScript Vanilla (ES6+), Canvas 2D/3D.
+* **Performance & SEO:** Core Web Vitals, Schema.org, Open Graph, WebP, Minificação e Caching Avançado.
+* **Segurança & Infraestrutura:** Cloudflare CDN, Google Cloud reCAPTCHA, Git & GitHub Pages.
+
+---
+
+## 📬 Contato & Orçamentos
+
+* 🌐 **Website:** [oscarlima.com.br](https://oscarlima.com.br)
+* 💬 **WhatsApp Direto:** [+55 (21) 99106-1796](https://wa.me/5521991061796)
+* ✉️ **E-mail Comercial:** [contato@oscarlima.com.br](mailto:contato@oscarlima.com.br)
+* 💼 **LinkedIn:** [linkedin.com/in/oscarlima](https://linkedin.com)
+* 🐙 **GitHub:** [github.com/oscarmoraes](https://github.com/oscarmoraes)
+
+---
+
+&copy; 2026 Oscar Lima. Todos os direitos reservados.
