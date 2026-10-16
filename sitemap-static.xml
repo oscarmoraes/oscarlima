@@ -57,4 +57,22 @@
       <changefreq>monthly</changefreq>
       <priority>0.8</priority>
    </url>
+   <url>
+      <loc>https://oscarlima.com.br/mega-relogios.html</loc>
+      <lastmod>2026-09-04T10:15:00+00:00</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url>
+   <url>
+      <loc>https://oscarlima.com.br/identifick.html</loc>
+      <lastmod>2026-09-04T10:15:00+00:00</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url>
+   <url>
+      <loc>https://oscarlima.com.br/sollus-tecnologia.html</loc>
+      <lastmod>2026-09-04T10:15:00+00:00</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url>
 </urlset>

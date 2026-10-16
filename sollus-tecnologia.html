@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sollus Tecnologia | Estudo de Caso - Oscar Lima</title>
+    <meta name="description" content="Implementação e migração de Google Cloud reCAPTCHA para o portal Sollus Tecnologia, protegendo formulários de orçamento corporativo contra automações e ataques.">
+    
+    <!-- AI Search & SEO Optimization -->
+    <meta name="author" content="Oscar Lima">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://oscarlima.com.br/sollus-tecnologia.html">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Sollus Tecnologia | Estudo de Caso - Oscar Lima">
+    <meta property="og:description" content="Migração e parametrização de segurança corporativa com Google Cloud reCAPTCHA na Sollus Tecnologia.">
+    <meta property="og:url" content="https://oscarlima.com.br/sollus-tecnologia.html">
+    <meta property="og:type" content="website">
+
+    <!-- Google Fonts Preconnect and Link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap">
+
+    <!-- FontAwesome for Premium Icons (Asynchronous) -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+    
+    <!-- Local Premium Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cookie-consent.css">
+    
+    <!-- Case Study Specific Styles -->
+    <style>
+        .case-container {
+            max-width: 1200px;
+            margin: 120px auto 60px;
+            padding: 0 20px;
+        }
+        
+        .breadcrumbs {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            color: var(--color-text-muted);
+        }
+        
+        .breadcrumbs a {
+            color: var(--color-text-muted);
+            text-decoration: none;
+            transition: var(--transition-smooth);
+        }
+        
+        .breadcrumbs a:hover {
+            color: var(--color-primary);
+        }
+        
+        .breadcrumbs i {
+            font-size: 0.8rem;
+        }
+        
+        .case-hero {
+            margin-bottom: 40px;
+        }
+        
+        .case-title {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            line-height: 1.2;
+        }
+        
+        .case-tagline {
+            font-size: 1.2rem;
+            color: var(--color-text-muted);
+            margin-bottom: 30px;
+        }
+        
+        .case-details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .detail-card {
+            padding: 20px;
+            text-align: left;
+        }
+        
+        .detail-card h4 {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--color-primary);
+            margin-bottom: 8px;
+        }
+        
+        .detail-card p {
+            font-size: 1.1rem;
+            color: #fff;
+            font-weight: 500;
+        }
+        
+        .case-content-layout {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 40px;
+            align-items: start;
+        }
+        
+        @media (max-width: 992px) {
+            .case-content-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .case-main-content {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        
+        .case-section h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            border-bottom: 1px solid var(--border-glass);
+            padding-bottom: 8px;
+            color: #fff;
+        }
+        
+        .case-section p {
+            color: var(--color-text-muted);
+            font-size: 1.05rem;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+        
+        .case-section ul {
+            list-style: none;
+            margin-bottom: 15px;
+        }
+        
+        .case-section ul li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 10px;
+            color: var(--color-text-muted);
+            font-size: 1.05rem;
+        }
+        
+        .case-section ul li::before {
+            content: "\f00c";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--color-primary);
+        }
+        
+        .case-sidebar {
+            position: sticky;
+            top: 100px;
+        }
+        
+        .case-media-wrapper {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--border-glass);
+            box-shadow: var(--shadow-neon-purple);
+            margin-bottom: 30px;
+            transition: var(--transition-smooth);
+        }
+        
+        .case-media-wrapper:hover {
+            transform: scale(1.02);
+            border-color: var(--border-glass-hover);
+            box-shadow: var(--shadow-neon);
+        }
+        
+        .case-media-wrapper img {
+            width: 100%;
+            display: block;
+            object-fit: cover;
+        }
+        
+        .cta-panel {
+            text-align: center;
+            border: 1px solid var(--border-glass);
+            background: linear-gradient(135deg, rgba(13,13,25,0.8) 0%, rgba(5,5,10,0.9) 100%);
+        }
+        
+        .cta-panel h3 {
+            font-size: 1.6rem;
+            margin-bottom: 12px;
+        }
+        
+        .cta-panel p {
+            color: var(--color-text-muted);
+            margin-bottom: 25px;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Scroll Progress Bar -->
+    <div id="scroll-progress" class="scroll-progress"></div>
+
+    <!-- Background Blobs -->
+    <div class="bg-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <!-- Header Navigation -->
+    <header id="main-header" class="scrolled">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                OSCAR LIMA<span class="logo-dot"></span>
+            </a>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html#portfolio" class="nav-link">
+                        <i class="fa-solid fa-arrow-left"></i> Voltar ao Portfólio
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="case-container">
+        
+        <!-- Breadcrumbs -->
+        <div class="breadcrumbs">
+            <a href="index.html">Início</a>
+            <i class="fa-solid fa-chevron-right"></i>
+            <a href="index.html#portfolio">Portfólio</a>
+            <i class="fa-solid fa-chevron-right"></i>
+            <span>Sollus Tecnologia</span>
+        </div>
+
+        <!-- Case Hero -->
+        <section class="case-hero">
+            <h1 class="case-title text-gradient">Sollus Tecnologia</h1>
+            <p class="case-tagline">Implementação e migração corporativa para Google Cloud reCAPTCHA com blindagem de canais de orçamento multirregionais.</p>
+        </section>
+
+        <!-- Project Meta Details -->
+        <section class="case-details-grid">
+            <div class="glass-panel detail-card">
+                <h4>Cliente</h4>
+                <p>Sollus Tecnologia (sollustecnologia.com)</p>
+            </div>
+            <div class="glass-panel detail-card">
+                <h4>Ano</h4>
+                <p>2026</p>
+            </div>
+            <div class="glass-panel detail-card">
+                <h4>Tecnologias</h4>
+                <p>Google Cloud, reCAPTCHA, Cloud Security, WordPress</p>
+            </div>
+            <div class="glass-panel detail-card">
+                <h4>Status</h4>
+                <p>Online & Protegido</p>
+            </div>
+        </section>
+
+        <!-- Content Layout -->
+        <div class="case-content-layout">
+            
+            <!-- Left: Main narrative -->
+            <article class="case-main-content">
+                
+                <section class="glass-panel case-section">
+                    <h3>O Desafio</h3>
+                    <p>A <strong>Sollus Tecnologia</strong> (sollustecnologia.com) conta com mais de 28 anos de história e unidades estratégicas em 4 estados (RJ, SP, ES, PR), atuando como grande autoridade em catracas biométricas e faciais, controle de acesso e softwares corporativos.</p>
+                    <p>Com um catálogo extenso e múltiplos pontos de contato ("Solicitar Orçamento", "Contato" e páginas de produtos), a infraestrutura sofria com tentativas frequentes de envio automatizado de formulários e ataques de força bruta em formulários web, demandando uma solução corporativa de alta confiabilidade.</p>
+                </section>
+
+                <section class="glass-panel case-section">
+                    <h3>A Solução</h3>
+                    <p>Executamos a <strong>migração e parametrização do reCAPTCHA no Google Cloud Platform</strong>, assegurando chaves exclusivas de alto desempenho e políticas estritas de proteção de domínio.</p>
+                    <p>A integração valida as submissões no servidor antes da entrega ao time de vendas, garantindo que solicitações de orçamentos de grandes empresas e condomínios sejam processadas instantaneamente, enquanto requisições robóticas são interceptadas silenciosamente na nuvem.</p>
+                </section>
+
+                <section class="glass-panel case-section">
+                    <h3>Diferencial & Bastidores</h3>
+                    <p>A proteção foi implantada de maneira não intrusiva, preservando a identidade visual elegante e o design de alta tecnologia do portal da Sollus. Não há exibição de testes visuais chatos nem quebra do layout responsivo.</p>
+                    <p>Além da barreira de segurança, o painel do Google Cloud fornece análises detalhadas de tráfego, permitindo acompanhar o volume de requisições de forma analítica e prevenindo gargalos nas caixas de entrada da empresa.</p>
+                </section>
+
+                <section class="glass-panel case-section">
+                    <h3>Principais Resultados</h3>
+                    <ul>
+                        <li>Blindagem total de todos os formulários de cotação e orçamento corporativo.</li>
+                        <li>Zero atrito para clientes em computadores, tablets ou celulares.</li>
+                        <li>Redução de custos operacionais e prevenção contra esgotamento de cotas de e-mail transacional.</li>
+                        <li>Infraestrutura de nuvem Google Cloud garantindo máxima disponibilidade e segurança.</li>
+                    </ul>
+                </section>
+
+            </article>
+
+            <!-- Right: Media & CTA -->
+            <aside class="case-sidebar">
+                
+                <div class="case-media-wrapper">
+                    <img src="assets/portfolio/sollustecnologia800x600.png" alt="Sollus Tecnologia - Controle de Ponto e Catracas Faciais">
+                </div>
+
+                <div class="glass-panel cta-panel">
+                    <h3>Segurança em Nuvem para sua Empresa</h3>
+                    <p>Eleve a segurança e o desempenho do seu site corporativo com tecnologias de ponta.</p>
+                    <a href="https://wa.me/5521991061796?text=Oi%20Oscar,%20vi%20o%20case%20da%20Sollus%20Tecnologia%20e%20gostaria%20de%20uma%20consultoria%20de%20seguranca/web." target="_blank" class="btn btn-primary">
+                        <i class="fa-brands fa-whatsapp"></i> Conversar no WhatsApp
+                    </a>
+                </div>
+
+            </aside>
+
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-socials">
+                <a href="https://github.com" target="_blank" class="footer-social-link" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="https://linkedin.com" target="_blank" class="footer-social-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://wa.me/5521991061796" target="_blank" class="footer-social-link" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="mailto:contato@oscarlima.com.br" class="footer-social-link" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+            <p class="footer-copyright">
+                &copy; 2026 Oscar Lima - Especialista WordPress & Desenvolvedor Front-end. Niterói, RJ. Todos os direitos reservados.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Local Premium JavaScript (Deferred) -->
+    <script src="js/main.js" defer></script>
+    <script src="js/cookie-consent.js" defer></script>
+</body>
+</html>

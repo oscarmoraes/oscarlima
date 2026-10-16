@@ -1,21 +1,23 @@
-# Arquivos de Configuração e Chaves de API (Segurança)
-config.php
+# Instalação WordPress (PHP / Dinâmico - Hospedado na Hostinger / Subdomínio)
+blog/
 wp-config.php
-blog/wp-config.php
+config.php
 api/
+
+# Projetos paralelos e workspaces
+youtube-extractor/
+cursodevsenai_work/
 
 # Dependências Node.js
 node_modules/
-youtube-extractor/node_modules/
 
-# Uploads de Mídia do WordPress (Imagens e Arquivos Pesados)
-blog/wp-content/uploads/
-blog/wp-content/ai1wm-backups/
+# Servidor Apache local
+.htaccess-2
 
 # Repositórios aninhados
 atalhos/.git/
 
-# Arquivos do Sistema Operacional e Temporários
+# Arquivos temporários e SO
 .DS_Store
 Thumbs.db
 *.log
