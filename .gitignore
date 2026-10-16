@@ -22,4 +22,7 @@ atalhos/.git/
 Thumbs.db
 *.log
 *.tmp
+# Configurações do Antigravity
+.agents/
+.agent/
 Novo Documento de Texto.txt
